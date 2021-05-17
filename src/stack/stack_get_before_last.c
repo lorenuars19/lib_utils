@@ -6,11 +6,11 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 13:03:14 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/09 21:34:17 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:22:40 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include "lib_stack.h"
 
 /*
 ** Returns the node before the last one on the stack

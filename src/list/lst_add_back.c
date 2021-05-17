@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_new.c                                          :+:      :+:    :+:   */
+/*   lst_add_back.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/07 10:48:30 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/04/03 21:46:40 by lorenuar         ###   ########.fr       */
+/*   Created: 2020/02/10 11:16:47 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/05/17 22:21:39 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include "lib_list.h"
 
-t_list	*lst_new(void *content)
+void	lst_add_back(t_list **alst, t_list *new)
 {
-	t_list	*head;
+	t_list	*tmp;
 
-	head = (t_list *)malloc(sizeof(t_list));
-	if (!(head))
-		return (NULL);
-	head->content = content;
-	head->next = NULL;
-	return (head);
+	if (alst && *alst && new)
+	{
+		tmp = *alst;
+		while (new && tmp && tmp->next)
+		{
+			tmp = tmp->next;
+		}
+		tmp->next = new;
+	}
+	else if (alst)
+	{
+		*alst = new;
+	}
 }

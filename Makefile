@@ -6,7 +6,7 @@
 #    By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/10 13:37:24 by lorenuar          #+#    #+#              #
-#    Updated: 2021/05/17 21:30:08 by lorenuar         ###   ########.fr        #
+#    Updated: 2021/05/17 22:38:19 by lorenuar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,30 +76,36 @@ SRCS =\
 	./src/stack/stack_push.c\
 	./src/stack/stack_new.c\
 	./src/stack/stack_push_back.c\
-	./src/lists/lst_free.c\
-	./src/lists/lst_add_back.c\
-	./src/lists/lst_last.c\
-	./src/lists/lst_delone.c\
-	./src/lists/lst_add_front.c\
-	./src/lists/lst_new.c\
-	./src/lists/lst_iter.c\
-	./src/lists/lst_map.c\
-	./src/lists/lst_size.c\
+	./src/ft_printf/format.c\
+	./src/ft_printf/utils/extra.c\
+	./src/ft_printf/utils/num.c\
+	./src/ft_printf/ft_printf.c\
+	./src/ft_printf/strings.c\
+	./src/ft_printf/unsigned.c\
+	./src/list/lst_free.c\
+	./src/list/lst_add_back.c\
+	./src/list/lst_last.c\
+	./src/list/lst_delone.c\
+	./src/list/lst_add_front.c\
+	./src/list/lst_new.c\
+	./src/list/lst_iter.c\
+	./src/list/lst_map.c\
+	./src/list/lst_size.c\
 	./src/io/put_chr.c\
 	./src/io/get_next_line.c\
-	./src/io/ft_printf/format.c\
-	./src/io/ft_printf/utils/extra.c\
-	./src/io/ft_printf/utils/num.c\
-	./src/io/ft_printf/ft_printf.c\
-	./src/io/ft_printf/strings.c\
-	./src/io/ft_printf/unsigned.c\
 	./src/io/put_str.c\
 	./src/io/put_str_times.c\
 	./src/io/error_put.c\
 
 HEADERS =\
+	./includes/lib_io.h\
 	./includes/lib_chr.h\
+	./includes/lib_stack.h\
 	./includes/ft_printf.h\
+	./includes/lib_nbr.h\
+	./includes/lib_list.h\
+	./includes/lib_ansi.h\
+	./includes/lib_str.h\
 	./includes/libutils.h\
 
 ###▲▲▲<src-updater-do-not-edit-or-remove>▲▲▲
@@ -131,23 +137,23 @@ $(OBJDIR) :
 
 # Compiling
 $(OBJDIR)%.o : %.c
-	@TIMEFORMAT='%3R' ; time $(CC) $(CFLAGS) -c $^ -o $@
-	@printf "$(GR)+$@ $(RC)"
+	@printf "$(GR)+$(RC)"
+	@$(CC) $(CFLAGS) -c $^ -o $@
 
 # Archiving
 $(NAME)	: $(SRCS) $(HEADERS) $(OBJS)
 	@printf "\n$(GR)=== Compiled [$(CC) $(CFLAGS)] ===\n--- $(SRC)$(RC)\n"
 	@rm -f $(NAME)
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJS)
-	@printf "$(YE)&&& Achived [$(AR) $(ARFLAGS)] &&&\n--- $(NAME)$(RC)\n"
+	@printf "$(YE)&&& Archived [$(AR) $(ARFLAGS)] &&&\n--- $(NAME)$(RC)\n"
 
 # Cleaning
 clean :
-	@printf "$(RE)--- Removing $(OBJDIR)$(RC)"
+	@printf "$(RE)--- Removing $(OBJDIR)$(RC)\n"
 	@rm -rf $(OBJDIR)
 
 fclean : clean
-	@printf "$(RE)--- Removing $(NAME)$(RC)"
+	@printf "$(RE)--- Removing $(NAME)$(RC)\n"
 	@rm -f $(NAME)
 
 # Special rule to force to remake everything

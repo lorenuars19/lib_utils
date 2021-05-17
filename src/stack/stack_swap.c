@@ -6,11 +6,11 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:38:47 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/18 10:20:59 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:22:46 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include "lib_stack.h"
 
 /*
 ** Swap the first and second node on the stack

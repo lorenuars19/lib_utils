@@ -6,11 +6,12 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 17:34:51 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/08 18:29:58 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:09:48 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include <stdlib.h>
+#include "lib_str.h"
 
 char	*str_dupli(const char *to_copy)
 {

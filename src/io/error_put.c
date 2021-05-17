@@ -6,11 +6,14 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 18:10:26 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/04/04 00:39:49 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:35:21 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include <errno.h>
+#include <string.h>
+#include "lib_io.h"
+#include "lib_str.h"
 
 /*
 ** Do not reprint Error if it has already been printed

@@ -6,10 +6,12 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 10:06:56 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/04/04 00:28:09 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:30:51 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdarg.h>
+#include <limits.h>
 #include "ft_printf.h"
 
 void	format_nbr_killswitches(t_opt opt,

@@ -6,11 +6,13 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 17:26:12 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/08 18:18:58 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:34:51 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include <errno.h>
+#include "lib_io.h"
+#include "lib_str.h"
 
 ssize_t	put_str_times(char *s, ssize_t n, size_t len)
 {

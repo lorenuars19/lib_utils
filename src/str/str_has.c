@@ -6,11 +6,11 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 17:22:59 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/08 18:30:52 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:05:41 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include "lib_str.h"
 
 size_t	str_has(const char *s, char c)
 {

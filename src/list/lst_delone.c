@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_size.c                                         :+:      :+:    :+:   */
+/*   lst_delone.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/07 12:53:25 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/08 18:25:52 by lorenuar         ###   ########.fr       */
+/*   Created: 2020/02/10 13:27:34 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/05/17 22:33:42 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include <stdlib.h>
+#include "lib_list.h"
 
-size_t	lst_size(t_list *lst)
+void	lst_delone(t_list *lst, void (*del)(void*))
 {
-	size_t	size;
-
-	size = 0;
-	while (lst)
+	if (del && lst && lst->content)
 	{
-		lst = lst->next;
-		size++;
+		(*del)(lst->content);
+		lst->content = NULL;
 	}
-	return (size);
+	if (lst && lst->content)
+	{
+		free(lst->content);
+		lst->content = NULL;
+	}
+	if (lst)
+	{
+		free(lst);
+		lst = NULL;
+	}
 }

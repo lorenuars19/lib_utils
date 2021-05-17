@@ -6,11 +6,12 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:32:46 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/09 22:19:21 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:27:54 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include <stdlib.h>
+#include "lib_stack.h"
 
 /*
 ** Pop the node on top of the stack

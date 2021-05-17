@@ -6,10 +6,11 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 19:07:47 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/04/04 00:27:09 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:32:07 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
 #include "ft_printf.h"
 
 ssize_t	format_ptr_space(t_nstat nst, t_opt opt, int order)

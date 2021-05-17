@@ -1,37 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_map.c                                          :+:      :+:    :+:   */
+/*   lst_add_front.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/10 14:28:27 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/08 18:25:59 by lorenuar         ###   ########.fr       */
+/*   Created: 2020/02/07 12:29:24 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/05/17 22:21:40 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include "lib_list.h"
 
-t_list	*lst_map(t_list *lst, void *(*f)(void *), void (*del)(void *))
+void	lst_add_front(t_list **alst, t_list *new)
 {
-	t_list	*new;
-	t_list	*tmp;
-
-	if (!lst || !f || !del)
-		return (NULL);
-	new = NULL;
-	tmp = NULL;
-	while (lst)
+	if (alst)
 	{
-		tmp = lst_new(f(lst->content));
-		if (!(tmp))
-		{
-			lst_delone(tmp, del);
-			lst_free(&new, del);
-			return (NULL);
-		}
-		lst_add_back(&new, tmp);
-		lst = lst->next;
+		if (new)
+			new->next = *alst;
+		*alst = new;
 	}
-	return (new);
 }

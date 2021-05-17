@@ -6,13 +6,14 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 18:00:31 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/04/03 21:45:02 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:08:12 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
-
-#include <debug_utils.h>
+#include <limits.h>
+#include "lib_str.h"
+#include "lib_nbr.h"
+#include "lib_chr.h"
 
 static ssize_t	ret_eat_nbr(ssize_t num, char sign)
 {

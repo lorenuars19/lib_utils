@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_alnum.c                                         :+:      :+:    :+:   */
+/*   lst_new.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 17:43:27 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/17 21:50:11 by lorenuar         ###   ########.fr       */
+/*   Created: 2020/02/07 10:48:30 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/05/17 22:33:54 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_chr.h"
+#include <stdlib.h>
+#include "lib_list.h"
 
-int	is_alnum(int c)
+t_list	*lst_new(void *content)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
-		|| (c >= '0' && c <= '9'))
-		return (1);
-	return (0);
-}
-int	is_alnum_sign(int c)
-{
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
-		|| (c >= '0' && c <= '9') || c == '-' || c == '+')
-		return (1);
-	return (0);
+	t_list	*head;
+
+	head = (t_list *)malloc(sizeof(t_list));
+	if (!(head))
+		return (NULL);
+	head->content = content;
+	head->next = NULL;
+	return (head);
 }

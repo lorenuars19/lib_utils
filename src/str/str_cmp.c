@@ -6,11 +6,11 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 17:26:41 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/04/10 01:22:07 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:05:27 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include "lib_str.h"
 
 int	str_cmp(const char *s1, const char *s2)
 {

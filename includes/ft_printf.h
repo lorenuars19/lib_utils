@@ -6,24 +6,15 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 10:09:39 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/04/03 21:41:02 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:32:59 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# ifndef DEBUG
-#  define DEBUG 0
-# endif
-
-# include "libutils.h"
-
 # include <stdarg.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <limits.h>
+# include "libutils.h"
 
 # define BASE_10 "0123456789"
 # define BASE_S_HEX "0123456789abcdef"

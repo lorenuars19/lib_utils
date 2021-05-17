@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   extra.c                                            :+:      :+:    :+:   */
+/*   lib_ansi.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/21 18:53:35 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/04/04 18:03:15 by lorenuar         ###   ########.fr       */
+/*   Created: 2021/03/06 15:05:51 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/05/17 22:29:32 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef LIB_ANSI_H
+# define LIB_ANSI_H
 
-ssize_t	put_char(char c)
-{
-	return (write(1, &c, 1));
-}
+/*
+** ANSI Colors
+*/
+# define RST "\033[0m"
+# define RED "\033[31;1m"
+# define GRN "\033[32;1m"
+# define YEL "\033[33;1m"
+# define BLU "\033[34;1m"
+# define MAG "\033[35;1m"
+# define CYA "\033[36;1m"
+# define WHI "\033[37;1m"
 
-size_t	sub_put_nbr_unsigned(size_t num, size_t base, char *b_chars)
-{
-	ssize_t	ret;
+/*
+** ANSI Colors Presets
+*/
+# define ERR "\033[91;1m"
 
-	ret = 0;
-	if (num >= base)
-	{
-		ret += sub_put_nbr(num / base, base, b_chars);
-		ret += sub_put_nbr(num % base, base, b_chars);
-	}
-	if (num < base)
-	{
-		put_char(b_chars[num]);
-		ret += 1;
-	}
-	return (ret);
-}
+#endif

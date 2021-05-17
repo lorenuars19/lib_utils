@@ -6,11 +6,12 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 17:22:59 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/04/03 21:47:20 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:34:13 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include <stdlib.h>
+#include "lib_io.h"
 
 size_t	hasto(char *s, char c)
 {

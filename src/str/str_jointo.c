@@ -6,11 +6,12 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 17:22:59 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/08 18:15:38 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:09:31 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include <stdlib.h>
+#include "lib_str.h"
 
 char	*str_jointo(char *s1, char *s2, char **tofree)
 {

@@ -6,11 +6,12 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:25:44 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/08 18:29:22 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:20:47 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include "lib_nbr.h"
+#include "lib_io.h"
 
 ssize_t	put_nbr(ssize_t num)
 {

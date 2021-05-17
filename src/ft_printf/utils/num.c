@@ -6,10 +6,11 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 18:53:40 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/04/04 00:27:37 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:33:15 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
 #include "ft_printf.h"
 
 ssize_t	star_return(va_list args, char **f)

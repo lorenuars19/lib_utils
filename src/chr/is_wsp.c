@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:43:27 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/17 21:39:26 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 21:49:59 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	is_wsp(char c)
 int	is_wsp_nl(char c)
 {
 	if (c == '\t' || c == '\v' || c == '\f' || c == '\r' || c == ' '
-		|| c == "\n")
+		|| c == '\n')
 		return (1);
 	return (0);
 }

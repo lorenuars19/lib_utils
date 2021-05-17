@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_add_front.c                                    :+:      :+:    :+:   */
+/*   lst_free.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/07 12:29:24 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/08 00:32:37 by lorenuar         ###   ########.fr       */
+/*   Created: 2020/02/10 13:56:51 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/05/17 22:21:43 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include "lib_list.h"
 
-void	lst_add_front(t_list **alst, t_list *new)
+void	lst_free(t_list **lst, void (*del)(void*))
 {
-	if (alst)
+	t_list	*tmp;
+
+	while (del && lst && *lst)
 	{
-		if (new)
-			new->next = *alst;
-		*alst = new;
+		tmp = (*lst)->next;
+		lst_delone(*lst, del);
+		*lst = tmp;
 	}
 }

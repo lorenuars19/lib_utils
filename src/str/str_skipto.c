@@ -6,11 +6,11 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:36:23 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/08 18:15:05 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:06:03 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include "lib_str.h"
 
 size_t	str_skipto(char **str, char c)
 {

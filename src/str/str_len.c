@@ -6,11 +6,11 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:05:33 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/04/10 01:17:15 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:06:00 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include "lib_str.h"
 
 size_t	str_len(const char *str)
 {

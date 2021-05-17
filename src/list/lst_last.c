@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_iter.c                                         :+:      :+:    :+:   */
+/*   lst_last.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/10 14:15:41 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/08 00:32:40 by lorenuar         ###   ########.fr       */
+/*   Created: 2020/02/10 11:11:02 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/05/17 22:21:45 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include "lib_list.h"
 
-void	lst_iter(t_list *lst, void (*f)(void *))
+t_list	*lst_last(t_list *lst)
 {
-	while (f && lst)
-	{
-		f(lst->content);
+	while (lst && lst->next)
 		lst = lst->next;
-	}
+	return (lst);
 }

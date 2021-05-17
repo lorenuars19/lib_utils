@@ -6,11 +6,11 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 13:02:46 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/17 18:30:07 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:22:45 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include "lib_stack.h"
 
 /*
 ** Pushes the node at the bottom of the stack

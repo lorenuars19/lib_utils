@@ -1,20 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_last.c                                         :+:      :+:    :+:   */
+/*   lst_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/10 11:11:02 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/08 00:32:41 by lorenuar         ###   ########.fr       */
+/*   Created: 2020/02/10 14:28:27 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/05/17 22:21:49 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include "lib_list.h"
 
-t_list	*lst_last(t_list *lst)
+t_list	*lst_map(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	while (lst && lst->next)
+	t_list	*new;
+	t_list	*tmp;
+
+	if (!lst || !f || !del)
+		return (NULL);
+	new = NULL;
+	tmp = NULL;
+	while (lst)
+	{
+		tmp = lst_new(f(lst->content));
+		if (!(tmp))
+		{
+			lst_delone(tmp, del);
+			lst_free(&new, del);
+			return (NULL);
+		}
+		lst_add_back(&new, tmp);
 		lst = lst->next;
-	return (lst);
+	}
+	return (new);
 }

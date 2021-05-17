@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_add_back.c                                     :+:      :+:    :+:   */
+/*   lst_iter.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/10 11:16:47 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/08 00:32:34 by lorenuar         ###   ########.fr       */
+/*   Created: 2020/02/10 14:15:41 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/05/17 22:21:44 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include "lib_list.h"
 
-void	lst_add_back(t_list **alst, t_list *new)
+void	lst_iter(t_list *lst, void (*f)(void *))
 {
-	t_list	*tmp;
-
-	if (alst && *alst && new)
+	while (f && lst)
 	{
-		tmp = *alst;
-		while (new && tmp && tmp->next)
-		{
-			tmp = tmp->next;
-		}
-		tmp->next = new;
-	}
-	else if (alst)
-	{
-		*alst = new;
+		f(lst->content);
+		lst = lst->next;
 	}
 }

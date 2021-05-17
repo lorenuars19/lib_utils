@@ -6,11 +6,11 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 16:06:44 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/08 16:28:28 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 21:59:47 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include "lib_io.h"
 
 void	put_chr(char chr)
 {

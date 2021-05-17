@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libutils.h                                         :+:      :+:    :+:   */
+/*   lib_list.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:05:51 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/17 22:25:30 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:17:48 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBUTILS_H
-# define LIBUTILS_H
+#ifndef LIB_LIST_H
+# define LIB_LIST_H
 
-# include "lib_chr.h"
-# include "lib_io.h"
-# include "lib_list.h"
-# include "lib_nbr.h"
-# include "lib_stack.h"
-# include "lib_str.h"
+# include <unistd.h>
+
+/*
+** lists
+*/
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
+t_list	*lst_new(void *content);
+
+void	lst_add_back(t_list **alst, t_list *new);
+void	lst_add_front(t_list **alst, t_list *new);
+void	lst_free(t_list **lst, void (*del)(void*));
+void	lst_delone(t_list *lst, void (*del)(void*));
+void	lst_iter(t_list *lst, void (*f)(void *));
+
+size_t	lst_size(t_list *lst);
+
+t_list	*lst_last(t_list *lst);
+t_list	*lst_map(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif

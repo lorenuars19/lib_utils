@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_delone.c                                       :+:      :+:    :+:   */
+/*   extra.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/10 13:27:34 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/08 00:32:39 by lorenuar         ###   ########.fr       */
+/*   Created: 2020/08/21 18:53:35 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/05/17 22:32:21 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libutils.h"
+#include <stdarg.h>
+#include "ft_printf.h"
 
-void	lst_delone(t_list *lst, void (*del)(void*))
+ssize_t	put_char(char c)
 {
-	if (del && lst && lst->content)
+	return (write(1, &c, 1));
+}
+
+size_t	sub_put_nbr_unsigned(size_t num, size_t base, char *b_chars)
+{
+	ssize_t	ret;
+
+	ret = 0;
+	if (num >= base)
 	{
-		(*del)(lst->content);
-		lst->content = NULL;
+		ret += sub_put_nbr(num / base, base, b_chars);
+		ret += sub_put_nbr(num % base, base, b_chars);
 	}
-	if (lst && lst->content)
+	if (num < base)
 	{
-		free(lst->content);
-		lst->content = NULL;
+		put_char(b_chars[num]);
+		ret += 1;
 	}
-	if (lst)
-	{
-		free(lst);
-		lst = NULL;
-	}
+	return (ret);
 }
