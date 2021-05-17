@@ -6,14 +6,13 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 14:08:25 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/17 22:27:37 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 23:08:49 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_stack.h"
 #include "lib_chr.h"
 #include "lib_str.h"
-
 
 /*
 ** Parse Args and strings to make a new stack

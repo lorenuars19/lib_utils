@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:05:51 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/17 22:35:30 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 23:08:24 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ ssize_t	str_to_nbr(const char *s);
 ssize_t	str_to_nbr_base(const char *s, int base);
 
 ssize_t	str_eat_nbr(char **f);
-
 
 #endif

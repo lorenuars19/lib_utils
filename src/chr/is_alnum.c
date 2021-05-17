@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:43:27 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/17 21:50:11 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 23:08:38 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	is_alnum(int c)
 		return (1);
 	return (0);
 }
+
 int	is_alnum_sign(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
