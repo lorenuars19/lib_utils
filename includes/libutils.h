@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:05:51 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/17 22:25:30 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:55:19 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@
 # include "lib_nbr.h"
 # include "lib_stack.h"
 # include "lib_str.h"
+# include "ft_printf.h"
 
 #endif
