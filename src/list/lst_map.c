@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 14:28:27 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/17 22:21:49 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/17 23:22:31 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ t_list	*lst_map(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		tmp = lst_new(f(lst->content));
 		if (!(tmp))
 		{
-			lst_delone(tmp, del);
-			lst_free(&new, del);
+			lst_remove(tmp, del);
+			lst_clear(&new, del);
 			return (NULL);
 		}
-		lst_add_back(&new, tmp);
+		lst_push_back(&new, tmp);
 		lst = lst->next;
 	}
 	return (new);

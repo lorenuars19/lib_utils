@@ -82,13 +82,13 @@ SRCS =\
 	./src/ft_printf/ft_printf.c\
 	./src/ft_printf/strings.c\
 	./src/ft_printf/unsigned.c\
-	./src/list/lst_free.c\
-	./src/list/lst_add_back.c\
 	./src/list/lst_last.c\
-	./src/list/lst_delone.c\
-	./src/list/lst_add_front.c\
+	./src/list/lst_remove.c\
+	./src/list/lst_pop.c\
+	./src/list/lst_push.c\
 	./src/list/lst_new.c\
 	./src/list/lst_iter.c\
+	./src/list/lst_clear.c\
 	./src/list/lst_map.c\
 	./src/list/lst_size.c\
 	./src/io/put_chr.c\
