@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 19:07:47 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/17 22:32:07 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/22 22:18:53 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ ssize_t	format_ptr_space(t_nstat nst, t_opt opt, int order)
 	{
 		x = 0;
 	}
-	return (n_str(" ", x, 1));
+	return (n_str(" ", x, 1, opt.fd));
 }
 
 static void	sub_print_ptr(void *ptr, t_base *bse, t_nstat *nst, int null_len)
@@ -53,15 +53,15 @@ ssize_t	print_ptr(void *ptr, t_opt opt)
 	ret += format_ptr_space(nst, opt, 0);
 	if (ptr)
 	{
-		ret += n_str("0x", 1, 0);
-		ret += sub_put_nbr_unsigned((size_t)ptr, (size_t)16, BASE_S_HEX);
+		ret += n_str("0x", 1, 0, opt.fd);
+		ret += sub_put_nbr_uns((size_t)ptr, (size_t)16, BASE_S_HEX, opt.fd);
 	}
 	else
 	{
 		if (opt.dot && opt.pr == 0)
-			ret += n_str(PTR_DOT_NULL, 1, 0);
+			ret += n_str(PTR_DOT_NULL, 1, 0, opt.fd);
 		else
-			ret += n_str(PTR_NULL, 1, 0);
+			ret += n_str(PTR_NULL, 1, 0, opt.fd);
 	}
 	ret += format_ptr_space(nst, opt, 1);
 	return (ret);
@@ -86,7 +86,7 @@ ssize_t	print_nbr_unsigned(unsigned int num, char *b_chars, t_opt opt)
 	ret += format_nbr_zero(opt, nst);
 	if (!(opt.dot && opt.pr == 0 && num == 0))
 	{
-		ret += sub_put_nbr_unsigned(num, nst.bse.bse, nst.bse.chr);
+		ret += sub_put_nbr_uns(num, nst.bse.bse, nst.bse.chr, opt.fd);
 	}
 	ret += format_nbr_space(opt, nst, 1);
 	return (ret);

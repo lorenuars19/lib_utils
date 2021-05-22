@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:05:51 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/17 22:27:10 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/22 22:25:12 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	put_chr_fd(int fd, char chr);
 void	*error_ptr_put(char *s);
 int		error_put(int ret, char *s);
 int		error_sys_put(int err);
+int		error_printf(int ret, char *fmt, ...);
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1

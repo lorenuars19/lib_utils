@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 10:06:56 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/17 22:30:51 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/22 22:14:37 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ ssize_t	format_nbr_space(t_opt opt, t_nstat nst, int order)
 		x -= opt.pr - r_pr;
 	sub_format_nbr_spaces(opt, nst, r_pr, &x);
 	format_nbr_killswitches(opt, nst, order, &x);
-	return (n_str(" ", x, 1));
+	return (n_str(" ", x, 1, opt.fd));
 }
 
 ssize_t	format_nbr_zero(t_opt opt, t_nstat nst)
@@ -107,7 +107,7 @@ ssize_t	format_nbr_zero(t_opt opt, t_nstat nst)
 	{
 		x = 0;
 	}
-	return (n_str(&nst.bse.chr[0], x, 1));
+	return (n_str(&nst.bse.chr[0], x, 1, opt.fd));
 }
 
 ssize_t	print_nbr(ssize_t num, char *b_chars, t_opt opt)
@@ -127,13 +127,13 @@ ssize_t	print_nbr(ssize_t num, char *b_chars, t_opt opt)
 		nst.len = 0;
 	ret += format_nbr_space(opt, nst, 0);
 	if (num < 0)
-		ret += put_char('-');
+		ret += put_char('-', opt.fd);
 	ret += format_nbr_zero(opt, nst);
 	if (!(opt.dot && opt.pr == 0 && num == 0))
 	{
 		if (num < 0)
 			num = -num;
-		ret += sub_put_nbr(num, nst.bse.bse, nst.bse.chr);
+		ret += sub_put_nbr(num, nst.bse.bse, nst.bse.chr, opt.fd);
 	}
 	ret += format_nbr_space(opt, nst, 1);
 	return (ret);

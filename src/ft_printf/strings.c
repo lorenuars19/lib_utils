@@ -6,26 +6,26 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 10:06:50 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/04/03 23:55:27 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/22 22:11:06 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-ssize_t	n_str(char *s, ssize_t n, size_t len)
+ssize_t	n_str(char *s, ssize_t n, size_t len, int fd)
 {
 	ssize_t	ret;
 
 	ret = 0;
-	while (n && s)
+	while (n && s && fd > 0)
 	{
 		if (len == 0)
 		{
-			ret += write(1, s, str_len(s));
+			ret += write(fd, s, str_len(s));
 		}
 		else
 		{
-			ret += write(1, s, len);
+			ret += write(fd, s, len);
 		}
 		if (n > 0)
 			n--;
@@ -77,7 +77,7 @@ ssize_t	format_str_spaces(ssize_t slen, t_opt opt, int order)
 	{
 		x = 0;
 	}
-	return (n_str(" ", x, 1));
+	return (n_str(" ", x, 1, opt.fd));
 }
 
 ssize_t	print_str(char *s, t_opt opt)
@@ -96,7 +96,7 @@ ssize_t	print_str(char *s, t_opt opt)
 	ret += format_str_spaces(slen, opt, 0);
 	if (!(opt.pr == 0 && opt.dot))
 	{
-		ret += n_str(s, 1, slen);
+		ret += n_str(s, 1, slen, opt.fd);
 	}
 	ret += format_str_spaces(slen, opt, 1);
 	return (ret);
@@ -109,12 +109,12 @@ ssize_t	print_char(char c, t_opt opt)
 	ret = 0;
 	if (c == '%' && opt.zr && (opt.fw > 0 || (opt.dot && opt.fw > 0)))
 	{
-		ret += n_str("0", opt.fw - 1, 1);
+		ret += n_str("0", opt.fw - 1, 1, opt.fd);
 	}
 	if (opt.fw > 0 && !(c == '%' && opt.zr))
-		ret += n_str(" ", opt.fw - 1, 1);
-	ret += n_str(&c, 1, 1);
+		ret += n_str(" ", opt.fw - 1, 1, opt.fd);
+	ret += n_str(&c, 1, 1, opt.fd);
 	if (opt.fw < 0)
-		ret += n_str(" ", opt.fw + 1, 1);
+		ret += n_str(" ", opt.fw + 1, 1, opt.fd);
 	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 09:52:05 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/04/03 21:54:40 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/22 22:08:41 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,13 @@ void	sub_get_opts(va_list args, char **fmt, t_opt *opt)
 	(*fmt)++;
 }
 
-ssize_t	get_opt(va_list args, char **fmt)
+ssize_t	get_opt(va_list args, char **fmt, int fd)
 {
 	t_opt	opt;
 	ssize_t	ret;
 
 	ret = 0;
-	opt = (t_opt){0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+	opt = (t_opt){fd, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	if (!skip_to(fmt, '%'))
 		return (ret);
 	if (**fmt == ' ')
@@ -91,25 +91,37 @@ ssize_t	get_opt(va_list args, char **fmt)
 	return (ret);
 }
 
-int	ft_printf(char *fmt, ...)
+int	ft_printf_fd(int fd, char *fmt, ...)
 {
-	ssize_t	ret;
+	int		ret;
 	va_list	args;
 
 	ret = 0;
 	va_start(args, fmt);
-	while (fmt && *fmt)
+	while (fmt && *fmt && fd > 0)
 	{
 		if (*fmt == '%')
 		{
-			ret += get_opt(args, &fmt);
+			ret += get_opt(args, &fmt, fd);
 		}
 		if (*fmt != '\0' && *fmt != '%')
 		{
-			ret += write(1, fmt, 1);
+			ret += write(fd, fmt, 1);
 			fmt++;
 		}
 	}
 	va_end(args);
-	return ((int)ret);
+	return (ret);
+}
+
+int	ft_printf(char *fmt, ...)
+{
+	int		ret;
+	va_list	args;
+
+	ret = 0;
+	va_start(args, fmt);
+	ret = ft_printf_fd(1, fmt, args);
+	va_end(args);
+	return (ret);
 }
