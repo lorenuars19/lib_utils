@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 18:53:35 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/22 22:18:58 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/22 22:44:46 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ size_t	sub_put_nbr_uns(size_t num, size_t base, char *b_chars, int fd)
 	ret = 0;
 	if (num >= base)
 	{
-		ret += sub_put_nbr_uns(num / base, base, b_chars, fd);
-		ret += sub_put_nbr_uns(num % base, base, b_chars, fd);
+		ret += sub_put_nbr(num / base, base, b_chars, fd);
+		ret += sub_put_nbr(num % base, base, b_chars, fd);
 	}
 	if (num < base)
 	{

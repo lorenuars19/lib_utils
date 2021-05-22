@@ -81,6 +81,7 @@ SRCS =\
 	./src/ft_printf/utils/num.c\
 	./src/ft_printf/ft_printf.c\
 	./src/ft_printf/strings.c\
+	./src/ft_printf/call_dispatch.c\
 	./src/ft_printf/unsigned.c\
 	./src/list/lst_last.c\
 	./src/list/lst_remove.c\

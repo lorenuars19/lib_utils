@@ -6,35 +6,11 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 09:52:05 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/22 22:08:41 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/22 23:09:19 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-ssize_t	call_dispatch(va_list args, t_opt opt)
-{
-	ssize_t	ret;
-
-	ret = 0;
-	if (opt.cv == '%')
-		ret += print_char(opt.cv, opt);
-	else if (opt.cv == 's')
-		ret += print_str(va_arg(args, char *), opt);
-	else if (opt.cv == 'c')
-		ret += print_char(va_arg(args, int), opt);
-	else if (opt.cv == 'd' || opt.cv == 'i')
-		ret += print_nbr((ssize_t)va_arg(args, int), BASE_10, opt);
-	else if (opt.cv == 'u')
-		ret += print_nbr_unsigned((size_t)va_arg(args, int), BASE_10, opt);
-	else if (opt.cv == 'x')
-		ret += print_nbr_unsigned((size_t)va_arg(args, int), BASE_S_HEX, opt);
-	else if (opt.cv == 'X')
-		ret += print_nbr_unsigned((size_t)va_arg(args, int), BASE_HEX, opt);
-	else if (opt.cv == 'p')
-		ret += print_ptr(va_arg(args, void *), opt);
-	return (ret);
-}
 
 void	sub_get_opts(va_list args, char **fmt, t_opt *opt)
 {
@@ -91,13 +67,11 @@ ssize_t	get_opt(va_list args, char **fmt, int fd)
 	return (ret);
 }
 
-int	ft_printf_fd(int fd, char *fmt, ...)
+int	ft_vprintf(int fd, char *fmt, va_list args)
 {
 	int		ret;
-	va_list	args;
 
 	ret = 0;
-	va_start(args, fmt);
 	while (fmt && *fmt && fd > 0)
 	{
 		if (*fmt == '%')
@@ -110,6 +84,16 @@ int	ft_printf_fd(int fd, char *fmt, ...)
 			fmt++;
 		}
 	}
+	return (ret);
+}
+
+int	ft_printf_fd(int fd, char *fmt, ...)
+{
+	int		ret;
+	va_list	args;
+
+	va_start(args, fmt);
+	ret = ft_vprintf(fd, fmt, args);
 	va_end(args);
 	return (ret);
 }
@@ -119,9 +103,8 @@ int	ft_printf(char *fmt, ...)
 	int		ret;
 	va_list	args;
 
-	ret = 0;
 	va_start(args, fmt);
-	ret = ft_printf_fd(1, fmt, args);
+	ret = ft_vprintf(1, fmt, args);
 	va_end(args);
 	return (ret);
 }

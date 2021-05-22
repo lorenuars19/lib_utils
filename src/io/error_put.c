@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 18:10:26 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/22 22:24:41 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/22 23:09:03 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@
 /*
 ** Do not reprint Error if it has already been printed
 */
-
 static int	g_error_already_printed = 0;
 
-void	*error_ptr_put(char *s)
+static void	error_print(void)
 {
 	put_str_fd(2, ERR);
 	if (!g_error_already_printed)
@@ -31,6 +30,11 @@ void	*error_ptr_put(char *s)
 		g_error_already_printed = 1;
 		put_str_fd(2, ERR"Error\n");
 	}
+}
+
+void	*error_ptr_put(char *s)
+{
+	error_print();
 	if (s)
 	{
 		if (write(2, s, str_len(s)) == -1)
@@ -42,12 +46,7 @@ void	*error_ptr_put(char *s)
 
 int	error_put(int ret, char *s)
 {
-	put_str_fd(2, ERR);
-	if (!g_error_already_printed)
-	{
-		g_error_already_printed = 1;
-		put_str_fd(2, ERR"Error\n");
-	}
+	error_print();
 	if (s)
 	{
 		if (write(2, s, str_len(s)) == -1)
@@ -62,12 +61,7 @@ int	error_sys_put(int err)
 	char		*s;
 
 	s = strerror(err);
-	put_str_fd(2, ERR);
-	if (!g_error_already_printed)
-	{
-		g_error_already_printed = 1;
-		put_str_fd(2, "Error\n");
-	}
+	error_print();
 	put_str_fd(2, "System : ");
 	if (s)
 	{
@@ -84,14 +78,9 @@ int	error_printf(int ret, char *fmt, ...)
 {
 	va_list	args;
 
-	put_str_fd(2, ERR);
-	if (!g_error_already_printed)
-	{
-		g_error_already_printed = 1;
-		put_str_fd(2, ERR"Error\n");
-	}
+	error_print();
 	va_start(args, fmt);
-	ft_printf_fd(2, fmt, args);
+	ft_vprintf(2, fmt, args);
 	va_end(args);
 	put_str_fd(2, RST"\n");
 	return (ret);

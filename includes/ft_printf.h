@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 10:09:39 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/22 22:18:58 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/22 23:10:20 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ typedef struct s_opt
 
 int		ft_printf(char *fmt, ...);
 int		ft_printf_fd(int fd, char *fmt, ...);
+int		ft_vprintf(int fd, char *fmt, va_list args);
 
 ssize_t	call_dispatch(va_list args, t_opt opt);
 
@@ -104,6 +105,5 @@ size_t	sub_put_nbr_uns(size_t num, size_t base, char *b_chars, int fd);
 
 size_t	num_len(ssize_t num, ssize_t base);
 size_t	num_len_unsigned(size_t num, ssize_t base);
-
 
 #endif
