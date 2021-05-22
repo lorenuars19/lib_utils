@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 13:27:34 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/17 23:25:10 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/05/22 23:10:36 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	lst_pop(t_list **list, void (*del)(void*))
 {
-	t_list *lst;
+	t_list	*lst;
 
 	lst = *list;
 	if (list && *list)
