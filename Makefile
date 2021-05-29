@@ -6,7 +6,7 @@
 #    By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/10 13:37:24 by lorenuar          #+#    #+#              #
-#    Updated: 2021/05/17 22:38:19 by lorenuar         ###   ########.fr        #
+#    Updated: 2021/05/29 06:00:15 by lorenuar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,12 @@ ARFLAGS = -rcs
 # Debug, use with`make DEBUG=1`
 ifeq ($(DEBUG),1)
 CFLAGS	+= -g3
-CFLAGS  += -fsanitize=address -fsanitize=leak
+endif
+ifeq ($(DEBUG),2)
+CFLAGS	+= -g3 -fsanitize=address
+endif
+ifeq ($(DEBUG),3)
+CFLAGS	+= -g3 -fsanitize=address -fsanitize=leak
 endif
 
 # Folder name
