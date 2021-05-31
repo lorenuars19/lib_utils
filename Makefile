@@ -50,69 +50,69 @@ LDFLAGS =
 # **   Generated with https://github.com/lorenuars19/makefile-src-updater   ** #
 # **************************************************************************** #
 
-SRCS =\
-	./src/chr/is_charset.c\
-	./src/chr/is_alpha.c\
-	./src/chr/is_digit.c\
-	./src/chr/is_ascii.c\
-	./src/chr/is_print.c\
-	./src/chr/is_wsp.c\
-	./src/chr/is_alnum.c\
-	./src/nbr/nbr_to_str.c\
-	./src/nbr/put_nbr_fd.c\
-	./src/nbr/put_nbr.c\
-	./src/nbr/nbr_len.c\
-	./src/str/str_eat_nbr.c\
-	./src/str/str_cmp.c\
-	./src/str/str_has.c\
-	./src/str/str_to_nbr.c\
-	./src/str/str_jointo.c\
-	./src/str/str_skipto.c\
-	./src/str/str_dupli.c\
-	./src/str/str_len.c\
-	./src/stack/stack_get_size.c\
-	./src/stack/stack_free.c\
-	./src/stack/stack_get_before_last.c\
-	./src/stack/stack_from.c\
-	./src/stack/stack_swap.c\
-	./src/stack/stack_rotate.c\
-	./src/stack/stack_pop.c\
-	./src/stack/stack_get_last.c\
-	./src/stack/stack_push.c\
-	./src/stack/stack_new.c\
-	./src/stack/stack_push_back.c\
-	./src/ft_printf/format.c\
-	./src/ft_printf/utils/extra.c\
-	./src/ft_printf/utils/num.c\
-	./src/ft_printf/ft_printf.c\
-	./src/ft_printf/strings.c\
-	./src/ft_printf/call_dispatch.c\
-	./src/ft_printf/unsigned.c\
-	./src/list/lst_last.c\
-	./src/list/lst_remove.c\
-	./src/list/lst_pop.c\
-	./src/list/lst_push.c\
-	./src/list/lst_new.c\
-	./src/list/lst_iter.c\
-	./src/list/lst_clear.c\
-	./src/list/lst_map.c\
-	./src/list/lst_size.c\
-	./src/io/put_chr.c\
-	./src/io/get_next_line.c\
-	./src/io/put_str.c\
-	./src/io/put_str_times.c\
-	./src/io/error_put.c\
+SRCS = \
+	./src/chr/is_charset.c \
+	./src/chr/is_alpha.c \
+	./src/chr/is_digit.c \
+	./src/chr/is_ascii.c \
+	./src/chr/is_print.c \
+	./src/chr/is_wsp.c \
+	./src/chr/is_alnum.c \
+	./src/nbr/nbr_to_str.c \
+	./src/nbr/put_nbr_fd.c \
+	./src/nbr/put_nbr.c \
+	./src/nbr/nbr_len.c \
+	./src/str/str_eat_nbr.c \
+	./src/str/str_cmp.c \
+	./src/str/str_has.c \
+	./src/str/str_to_nbr.c \
+	./src/str/str_jointo.c \
+	./src/str/str_skipto.c \
+	./src/str/str_dupli.c \
+	./src/str/str_len.c \
+	./src/stack/stack_get_size.c \
+	./src/stack/stack_free.c \
+	./src/stack/stack_get_before_last.c \
+	./src/stack/stack_from.c \
+	./src/stack/stack_swap.c \
+	./src/stack/stack_rotate.c \
+	./src/stack/stack_pop.c \
+	./src/stack/stack_get_last.c \
+	./src/stack/stack_push.c \
+	./src/stack/stack_new.c \
+	./src/stack/stack_push_back.c \
+	./src/ft_printf/format.c \
+	./src/ft_printf/utils/extra.c \
+	./src/ft_printf/utils/num.c \
+	./src/ft_printf/ft_printf.c \
+	./src/ft_printf/strings.c \
+	./src/ft_printf/call_dispatch.c \
+	./src/ft_printf/unsigned.c \
+	./src/list/lst_last.c \
+	./src/list/lst_remove.c \
+	./src/list/lst_pop.c \
+	./src/list/lst_push.c \
+	./src/list/lst_new.c \
+	./src/list/lst_iter.c \
+	./src/list/lst_clear.c \
+	./src/list/lst_map.c \
+	./src/list/lst_size.c \
+	./src/io/put_chr.c \
+	./src/io/get_next_line.c \
+	./src/io/put_str.c \
+	./src/io/put_str_times.c \
+	./src/io/error_put.c \
 
-HEADERS =\
-	./includes/lib_io.h\
-	./includes/lib_chr.h\
-	./includes/lib_stack.h\
-	./includes/ft_printf.h\
-	./includes/lib_nbr.h\
-	./includes/lib_list.h\
-	./includes/lib_ansi.h\
-	./includes/lib_str.h\
-	./includes/libutils.h\
+HEADERS = \
+	./includes/lib_io.h \
+	./includes/lib_chr.h \
+	./includes/lib_stack.h \
+	./includes/ft_printf.h \
+	./includes/lib_nbr.h \
+	./includes/lib_list.h \
+	./includes/lib_ansi.h \
+	./includes/lib_str.h \
+	./includes/libutils.h \
 
 ###▲▲▲<src-updater-do-not-edit-or-remove>▲▲▲
 
