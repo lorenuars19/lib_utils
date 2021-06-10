@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:05:51 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/22 22:25:12 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/11 01:14:50 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ void	put_str_fd(int fd, char *str);
 void	put_str_fd_nl(int fd, char *str);
 
 ssize_t	put_str_times(char *s, ssize_t n, size_t len);
+ssize_t	put_str_times_nl(char *s, ssize_t n, size_t len);
 ssize_t	put_str_times_fd(int fd, char *s, ssize_t n, size_t len);
+ssize_t	put_str_times_fd_nl(int fd, char *s, ssize_t n, size_t len);
 
 void	put_chr(char chr);
 void	put_chr_fd(int fd, char chr);
