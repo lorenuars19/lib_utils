@@ -6,11 +6,11 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 14:53:01 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/21 15:15:43 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/21 15:24:23 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "lib_math.h"
 
 int	maxi(int a, int b)
 {

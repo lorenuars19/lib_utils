@@ -95,6 +95,9 @@ SRCS = \
 	./src/stack/stack_from.c \
 	./src/stack/stack_new.c \
 	./src/stack/stack_push_back.c \
+	./src/math/min.c \
+	./src/math/abs.c \
+	./src/math/max.c \
 	./src/chr/is_charset.c \
 	./src/chr/is_ascii.c \
 	./src/chr/is_digit.c \
@@ -107,6 +110,7 @@ HEADERS = \
 	./includes/lib_list.h \
 	./includes/lib_ansi.h \
 	./includes/lib_nbr.h \
+	./includes/lib_math.h \
 	./includes/lib_io.h \
 	./includes/lib_chr.h \
 	./includes/lib_str.h \
