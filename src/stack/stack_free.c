@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:32:46 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/21 17:04:49 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:04:27 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 void	stack_free(t_stack *stack)
 {
-	free(stack->data);
-	stack->data = NULL;
-	stack->size = 0;
+	free(stack->dat);
+	stack->dat = NULL;
+	stack->siz = 0;
 	stack->max_siz = 0;
 }
