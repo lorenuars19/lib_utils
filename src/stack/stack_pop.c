@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:32:46 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/21 21:27:30 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:49:17 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 int	stack_pop(t_stack *stack)
 {
 	if (stack_shift_up(*&stack))
-		return(error_put(1, "stack_pop : stack_shift_up()"));
+		return (error_put(1, "stack_pop : stack_shift_up()"));
+	return (0);
 }
 
 int	stack_pop_back(t_stack *stack)

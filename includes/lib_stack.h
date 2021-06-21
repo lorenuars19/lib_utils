@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:05:51 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/21 21:27:54 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:47:30 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 # include "lib_io.h"
 # include <unistd.h>
 
-#include <debug_utils.h>
+#include <debug_utils.h> //TODO REMOVE BEFORE PUSH
 
 /*
 ** stack
 */
 
-#define	STACK_INIT_SIZ 2
-#define STACK_SIZ_MULT 1.5
+# define	STACK_INIT_SIZ 2
+# define STACK_SIZ_MULT 1.5
 
 typedef struct s_stack
 {
@@ -47,7 +47,6 @@ size_t	stack_get_size(t_stack *stack);
 
 int		stack_from_args(int argc, char *argv[], t_stack *a);
 int		stack_from_str(char *str, t_stack *a);
-
 
 int		stack_swap(t_stack *stack);
 int		stack_rotate(t_stack *stack);
