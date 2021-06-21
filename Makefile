@@ -6,7 +6,7 @@
 #    By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/10 13:37:24 by lorenuar          #+#    #+#              #
-#    Updated: 2021/05/29 06:00:15 by lorenuar         ###   ########.fr        #
+#    Updated: 2021/06/21 17:02:31 by lorenuar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME	= libutils.a
 SHELL	= /bin/bash
 # Compiler and compiling flags
 CC	= gcc
-CFLAGS	= -Wall -Werror -Wextra
+# CFLAGS	= -Wall -Werror -Wextra
 
 AR = ar
 ARFLAGS = -rcs
@@ -84,16 +84,15 @@ SRCS = \
 	./src/ft_printf/call_dispatch.c \
 	./src/ft_printf/utils/extra.c \
 	./src/ft_printf/utils/num.c \
-	./src/stack/stack_get_last.c \
-	./src/stack/stack_get_before_last.c \
 	./src/stack/stack_free.c \
 	./src/stack/stack_rotate.c \
 	./src/stack/stack_get_size.c \
 	./src/stack/stack_pop.c \
 	./src/stack/stack_push.c \
+	./src/stack/stack_shift.c \
+	./src/stack/stack_new_resize.c \
 	./src/stack/stack_swap.c \
 	./src/stack/stack_from.c \
-	./src/stack/stack_new.c \
 	./src/stack/stack_push_back.c \
 	./src/math/min.c \
 	./src/math/abs.c \

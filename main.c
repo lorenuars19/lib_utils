@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_new.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 13:03:14 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/17 22:29:50 by lorenuar         ###   ########.fr       */
+/*   Created: 2021/06/21 16:52:44 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/06/21 17:38:35 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "lib_stack.h"
+#include <debug_utils.h>
 
-/*
-** Allocate a new node to put on a stack
-*/
+#include "./includes/libutils.h"
 
-t_stack	*stack_new(ssize_t data)
+int main(void)
 {
-	t_stack	*stack;
+	int 	i;
+	t_stack stack;
 
-	stack = (t_stack *)malloc(sizeof(t_stack));
-	if (!(stack))
-		return (NULL);
-	stack->data = data;
-	stack->next = NULL;
-	return (stack);
+
+
+	stack = (t_stack){NULL, 0, 0};
+
+	i = 0;
+	while (i < 10000000)
+	{
+		if (stack_push(&stack, i))
+			return(1);
+
+
+DB(&stack, stack.size, stack.max_siz, stack.data, i, stack.data[i]);
+	i++;
+	}
+	stack_free(&stack);
+	return (0);
+
+
 }

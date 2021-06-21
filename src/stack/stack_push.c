@@ -6,37 +6,19 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 13:02:46 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/17 22:22:45 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/21 17:32:28 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_stack.h"
 
-/*
-** Pushes the node on top of the stack
-*/
-
-t_stack	*stack_push(t_stack **stack, t_stack *new)
+int	stack_push(t_stack *stack, long data)
 {
-	if (!stack || !*stack || !new)
-		return (NULL);
-	new->next = *stack;
-	*stack = new;
-	return (new);
-}
+	if (stack_new_resize(stack))
+		return (error_put(1, "stack_push : stack_new_resize() NULL data"));
 
-/*
-** Pushes a new node containing data
-*/
+	stack->data[stack->size] = data;
+	stack->size++;
 
-t_stack	*stack_push_data(t_stack **stack, ssize_t data)
-{
-	t_stack	*new;
-
-	new = stack_new(data);
-	if (!new)
-		return (NULL);
-	new->next = *stack;
-	*stack = new;
-	return (new);
+	return (0);
 }

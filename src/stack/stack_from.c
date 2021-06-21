@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 14:08:25 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/17 23:08:49 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/21 17:22:04 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 ** First element is on top
 */
 
-t_stack	*stack_from_args(int argc, char *argv[], t_stack **a)
+int	stack_from_args(int argc, char *argv[], t_stack *a)
 {
-	ssize_t	nbr;
+	long	nbr;
 	char	*str;
 	int		i;
 
@@ -34,7 +34,7 @@ t_stack	*stack_from_args(int argc, char *argv[], t_stack **a)
 			nbr = str_eat_nbr(&str);
 			if (str && (is_wsp(*str) || !*str))
 			{
-				if (!stack_push_back_data(a, nbr))
+				if (!stack_push_back(a, nbr))
 					return (NULL);
 			}
 			while (str && *str && !is_digit_sign(*str))
@@ -42,7 +42,7 @@ t_stack	*stack_from_args(int argc, char *argv[], t_stack **a)
 		}
 		i++;
 	}
-	return (*a);
+	return (a);
 }
 
 /*
@@ -50,20 +50,20 @@ t_stack	*stack_from_args(int argc, char *argv[], t_stack **a)
 ** First element is on top
 */
 
-t_stack	*stack_from_str(char *str, t_stack **a)
+int	stack_from_str(char *str, t_stack *a)
 {
-	ssize_t	nbr;
+	long	nbr;
 
 	while (str && *str)
 	{
 		nbr = str_eat_nbr(&str);
 		if (str && (is_wsp(*str) || !*str))
 		{
-			if (!stack_push_back_data(a, nbr))
+			if (!stack_push_back(a, nbr))
 				return (NULL);
 		}
 		while (str && *str && (is_wsp(*str) || !is_digit_sign(*str)))
 			str++;
 	}
-	return (*a);
+	return (a);
 }

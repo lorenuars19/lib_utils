@@ -6,58 +6,19 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 13:02:46 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/17 22:22:45 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/21 17:22:24 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_stack.h"
 
-/*
-** Pushes the node at the bottom of the stack
-*/
-
-t_stack	*stack_push_back(t_stack **stack, t_stack *new)
+int	stack_push_back(t_stack *stack, long data)
 {
-	t_stack	*tmp;
+	stack->size++;
+	if (!stack_new_resize(stack))
+		return (error_put(1, "stack_push_back : stack_new_resize() NULL data"));
 
-	if (!stack || !*stack || !new)
-		return (NULL);
-	if (stack && !*stack)
-	{
-		*stack = new;
-		return (new);
-	}
-	tmp = *stack;
-	while (new && tmp && tmp->next)
-	{
-		tmp = tmp->next;
-	}
-	tmp->next = new;
-	return (new);
-}
+	stack->data[0] = data;
 
-/*
-** Pushes a new node containing data
-*/
-
-t_stack	*stack_push_back_data(t_stack **stack, ssize_t data)
-{
-	t_stack	*tmp;
-	t_stack	*new;
-
-	new = stack_new(data);
-	if (!new)
-		return (NULL);
-	if (stack && !*stack)
-	{
-		*stack = new;
-		return (new);
-	}
-	tmp = *stack;
-	while (stack && new && tmp && tmp->next)
-	{
-		tmp = tmp->next;
-	}
-	tmp->next = new;
-	return (new);
+	return (0);
 }

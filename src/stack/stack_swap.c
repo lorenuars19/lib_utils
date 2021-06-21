@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:38:47 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/17 22:22:46 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/21 17:01:59 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,5 @@ int	stack_swap(t_stack **stack)
 {
 	t_stack	*tmp;
 
-	if (!stack || !*stack || !(*stack)->next)
-		return (1);
-	tmp = *stack;
-	*stack = (*stack)->next;
-	tmp->next = (*stack)->next;
-	(*stack)->next = tmp;
 	return (0);
 }

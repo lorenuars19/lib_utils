@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_get_before_last.c                            :+:      :+:    :+:   */
+/*   stack_shift.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 13:03:14 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/17 22:22:40 by lorenuar         ###   ########.fr       */
+/*   Created: 2021/06/21 17:13:29 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/06/21 17:21:09 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_stack.h"
 
-/*
-** Returns the node before the last one on the stack
-*/
-
-t_stack	*stack_get_before_last(t_stack *stack)
+int	stack_shift(t_stack *stack)
 {
-	if (!(stack))
-		return (NULL);
-	while (stack && stack->next && stack->next->next)
+	long	i;
+	long	tmp;
+
+	stack->size++;
+	if (!stack_new_resize(stack))
+		return (error_put(1, "stack_shift : stack_new_resize() NULL data"));
+
+	i = stack->size;
+	while (stack->data && i < stack->size + 1 && i >= 0)
 	{
-		stack = stack->next;
+		stack->data[i + 1] = stack->data[i];
+		i--;
 	}
-	return (stack);
+
+
+
 }
