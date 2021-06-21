@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libutils.h                                         :+:      :+:    :+:   */
+/*   max.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/06 15:05:51 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/21 15:06:20 by lorenuar         ###   ########.fr       */
+/*   Created: 2021/05/21 14:53:01 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/06/21 15:09:04 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBUTILS_H
-# define LIBUTILS_H
+#include "push_swap.h"
 
-# include "lib_chr.h"
-# include "lib_io.h"
-# include "lib_list.h"
-# include "lib_nbr.h"
-# include "lib_stack.h"
-# include "lib_str.h"
-# include "lib_math.h"
-# include "ft_printf.h"
+int	maxi(int a, int b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
 
-#endif
+long	maxl(long a, long b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
