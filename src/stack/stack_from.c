@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 14:08:25 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/21 20:03:29 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/21 23:45:33 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	stack_from_args(int argc, char *argv[], t_stack *a)
 			nbr = str_eat_nbr(&str);
 			if (str && (is_wsp(*str) || !*str))
 			{
-				if (!stack_push_back(a, nbr))
+				if (stack_push_back(a, nbr))
 					return (error_put(1, E_SFA));
 			}
 			while (str && *str && !is_digit_sign(*str))
@@ -59,7 +59,7 @@ int	stack_from_str(char *str, t_stack *a)
 		nbr = str_eat_nbr(&str);
 		if (str && (is_wsp(*str) || !*str))
 		{
-			if (!stack_push_back(a, nbr))
+			if (stack_push_back(a, nbr))
 				return (error_put(1, E_SFS));
 		}
 		while (str && *str && (is_wsp(*str) || !is_digit_sign(*str)))
