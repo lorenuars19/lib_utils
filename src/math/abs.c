@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   max.c                                              :+:      :+:    :+:   */
+/*   abs.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 14:53:01 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/21 15:09:04 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/21 15:14:36 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	maxi(int a, int b)
+int	absi(int a)
 {
-	if (a > b)
-		return (a);
-	return (b);
+	if (a < 0)
+		return (-a);
+	return (a);
 }
 
-long	maxl(long a, long b)
+long	absl(long a)
 {
-	if (a > b)
-		return (a);
-	return (b);
+	if (a < 0)
+		return (-a);
+	return (a);
 }
