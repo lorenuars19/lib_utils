@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:05:51 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/21 21:47:30 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/22 10:40:49 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 # include "lib_io.h"
 # include <unistd.h>
 
-#include <debug_utils.h> //TODO REMOVE BEFORE PUSH
-
 /*
 ** stack
 */
 
-# define	STACK_INIT_SIZ 2
+# define STACK_INIT_SIZ 2
 # define STACK_SIZ_MULT 1.5
 
 typedef struct s_stack
