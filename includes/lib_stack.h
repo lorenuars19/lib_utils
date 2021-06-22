@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:05:51 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/22 10:40:49 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/22 17:36:08 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	stack_free(t_stack *stack);
 
 size_t	stack_get_size(t_stack *stack);
 
-int		stack_from_args(int argc, char *argv[], t_stack *a);
+int		stack_from_args(int argc, char *argv[], t_stack *a, int offs);
 int		stack_from_str(char *str, t_stack *a);
 
 int		stack_swap(t_stack *stack);

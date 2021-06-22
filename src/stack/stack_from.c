@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 14:08:25 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/21 23:45:33 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/22 17:43:04 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 ** First element is on top
 */
 
-int	stack_from_args(int argc, char *argv[], t_stack *a)
+int	stack_from_args(int argc, char *argv[], t_stack *a, int offs)
 {
 	long	nbr;
 	char	*str;
 	int		i;
 
-	i = 1;
+	i = offs;
 	while (i < argc)
 	{
 		str = argv[i];
@@ -37,7 +37,9 @@ int	stack_from_args(int argc, char *argv[], t_stack *a)
 				if (stack_push_back(a, nbr))
 					return (error_put(1, E_SFA));
 			}
-			while (str && *str && !is_digit_sign(*str))
+			if (str && *str && !(is_wsp(*str) || is_digit_sign(*str)))
+				return (error_put(1, "stack_from_args : INPUT non-numeric"));
+			while (str && *str && is_wsp(*str))
 				str++;
 		}
 		i++;
@@ -62,7 +64,9 @@ int	stack_from_str(char *str, t_stack *a)
 			if (stack_push_back(a, nbr))
 				return (error_put(1, E_SFS));
 		}
-		while (str && *str && (is_wsp(*str) || !is_digit_sign(*str)))
+		if (str && *str && (!is_wsp(*str) || !is_digit_sign(*str)))
+			return (error_put(1, "stack_from_str : INPUT non-numeric"));
+		while (str && *str && (is_wsp(*str)))
 			str++;
 	}
 	return (0);
