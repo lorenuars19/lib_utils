@@ -17,7 +17,7 @@ int	gnst_rotate(t_gnst *gnst)
 	void	*tmp;
 
 	if (!gnst)
-		return (error_put(1, "gnst_swap : NULL gnst"));
+		return (error_put(1, "gnst_rotate : NULL gnst"));
 	tmp = gnst->dat[0];
 	if (gnst_pop(gnst))
 		return (error_put(1, "gnst_rev_rotate : gnst_pop()"));
@@ -31,7 +31,7 @@ int	gnst_rev_rotate(t_gnst *gnst)
 	void	*tmp;
 
 	if (!gnst)
-		return (error_put(1, "gnst_swap : NULL gnst"));
+		return (error_put(1, "gnst_rotate : NULL gnst"));
 	tmp = gnst->dat[gnst->siz - 1];
 	if (gnst_pop_back(gnst))
 		return (error_put(1, "gnst_rotate : gnst_pop_back()"));

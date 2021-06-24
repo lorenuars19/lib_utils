@@ -12,10 +12,6 @@
 
 #include "lib_gnst.h"
 
-
-#   include <debug_utils.h> // TODO remove
-
-
 int	gnst_push(t_gnst *gnst, void *data)
 {
 	if (!gnst)
@@ -34,18 +30,12 @@ int	gnst_push(t_gnst *gnst, void *data)
 int	gnst_push_back(t_gnst *gnst, void *data)
 {
 	if (!gnst)
-		return (error_put(1, "gnst_shift : NULL gnst"));
-
-DBM(STPB A, gnst, gnst->siz, gnst->max_siz)
-
+		return (error_put(1, "gnst_push_back : NULL gnst"));
 	gnst->siz++;
 	if (gnst_new_resize(gnst))
-		return (error_put(1, "gnst_push : gnst_new_resize() NULL data"));
+		return (error_put(1, "gnst_push_back : gnst_new_resize() NULL data"));
 	if (!gnst->dat)
 		return (error_put(1, "gnst_push_back : gnst->dat NULL"));
-
-DBM(STPB B, gnst, gnst->siz, gnst->max_siz)
-
 	if (gnst->siz > 0)
 	{
 		gnst->dat[gnst->siz - 1] = data;

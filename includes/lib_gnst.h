@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:09:49 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/24 18:11:47 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/24 18:19:26 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 ** gnst
 */
 
-# define gnst_INIT_SIZ 2
-# define gnst_SIZ_MULT 2
+# define GNST_INIT_SIZ 2
+# define GNST_SIZ_MULT 1.5
 
 typedef struct s_generic_stack
 {

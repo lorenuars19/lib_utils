@@ -17,10 +17,10 @@ int	gnst_shift_down(t_gnst *gnst)
 	long	i;
 
 	if (!gnst)
-		return (error_put(1, "gnst_shift : NULL gnst"));
+		return (error_put(1, "gnst_shift_down : NULL gnst"));
 	gnst->siz++;
 	if (gnst_new_resize(gnst))
-		return (error_put(1, "gnst_shift : gnst_new_resize() NULL data"));
+		return (error_put(1, "gnst_shift_down : gnst_new_resize() NULL data"));
 	i = gnst->siz - 1;
 	while (gnst->dat && i < gnst->siz && i >= 0)
 	{
@@ -35,10 +35,10 @@ int	gnst_shift_up(t_gnst *gnst)
 	long	i;
 
 	if (!gnst)
-		return (error_put(1, "gnst_shift : NULL gnst"));
+		return (error_put(1, "gnst_shift_up : NULL gnst"));
 	gnst->siz--;
 	if (gnst_new_resize(gnst))
-		return (error_put(1, "gnst_shift : gnst_new_resize() NULL data"));
+		return (error_put(1, "gnst_shift_up : gnst_new_resize() NULL data"));
 	i = 0;
 	while (gnst->dat && i < gnst->siz && i >= 0)
 	{
