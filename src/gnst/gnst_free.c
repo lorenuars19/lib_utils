@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_get_size.c                                   :+:      :+:    :+:   */
+/*   gnst_free.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 13:03:14 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/24 18:16:14 by lorenuar         ###   ########.fr       */
+/*   Created: 2021/03/09 20:32:46 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/06/24 18:07:27 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_stack.h"
+#include <stdlib.h>
+#include "lib_gnst.h"
 
-size_t	stack_get_size(t_stack *stack)
+/*
+** Free the whole gnst
+*/
+
+void	gnst_free(t_gnst *gnst)
 {
-	if (stack)
-	{
-		return (stack->siz);
-	}
-	return (0);
+	free(gnst->dat);
+	gnst->dat = NULL;
+	gnst->siz = 0;
+	gnst->max_siz = 0;
 }

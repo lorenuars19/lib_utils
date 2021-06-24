@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_get_size.c                                   :+:      :+:    :+:   */
+/*   gnst_swap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 13:03:14 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/24 18:16:14 by lorenuar         ###   ########.fr       */
+/*   Created: 2021/03/09 20:38:47 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/06/24 18:07:42 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_stack.h"
+#include "lib_gnst.h"
 
-size_t	stack_get_size(t_stack *stack)
+int	gnst_swap(t_gnst *gnst)
 {
-	if (stack)
+	void	*tmp;
+
+	if (!gnst)
+		return (error_put(1, "gnst_swap : NULL gnst"));
+	if (gnst->siz > 1)
 	{
-		return (stack->siz);
+		tmp = gnst->dat[0];
+		gnst->dat[0] = gnst->dat[1];
+		gnst->dat[1] = tmp;
 	}
 	return (0);
 }

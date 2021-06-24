@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:05:51 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/22 17:36:08 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/24 18:04:17 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 */
 
 # define STACK_INIT_SIZ 2
-# define STACK_SIZ_MULT 1.5
+# define STACK_SIZ_MULT 2
 
 typedef struct s_stack
 {

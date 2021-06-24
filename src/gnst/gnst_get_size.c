@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_get_size.c                                   :+:      :+:    :+:   */
+/*   gnst_get_size.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 13:03:14 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/24 18:16:14 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/24 18:07:33 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_stack.h"
+#include "lib_gnst.h"
 
-size_t	stack_get_size(t_stack *stack)
+size_t	gnst_get_size(t_gnst *gnst)
 {
-	if (stack)
+	if (gnst)
 	{
-		return (stack->siz);
+		return (gnst->siz);
 	}
 	return (0);
 }

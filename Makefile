@@ -103,11 +103,20 @@ SRCS = \
 	./src/chr/is_print.c \
 	./src/chr/is_alpha.c \
 	./src/chr/is_wsp.c \
+	./src/gnst/gnst_push.c \
+	./src/gnst/gnst_get_size.c \
+	./src/gnst/gnst_free.c \
+	./src/gnst/gnst_new_resize.c \
+	./src/gnst/gnst_rotate.c \
+	./src/gnst/gnst_shift.c \
+	./src/gnst/gnst_pop.c \
+	./src/gnst/gnst_swap.c \
 
 HEADERS = \
 	./includes/lib_list.h \
 	./includes/lib_ansi.h \
 	./includes/lib_nbr.h \
+	./includes/lib_gnst.h \
 	./includes/lib_math.h \
 	./includes/lib_io.h \
 	./includes/lib_chr.h \
