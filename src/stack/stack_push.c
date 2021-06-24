@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 13:02:46 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/24 18:56:52 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/24 21:58:25 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,11 @@ int	stack_push_back(t_stack *stack, long data)
 {
 	if (!stack)
 		return (error_put(1, "stack_push_back : NULL stack"));
-	stack->siz++;
 	if (stack_new_resize(stack))
 		return (error_put(1, "stack_push_back : stack_new_resize() NULL data"));
 	if (!stack->dat)
 		return (error_put(1, "stack_push_back : stack->dat NULL"));
-	if (stack->siz > 0)
-	{
-		stack->dat[stack->siz - 1] = data;
-	}
-	else
-	{
-		stack->dat[0] = data;
-	}
+	stack->dat[stack->i] = data;
+	stack->i++;
 	return (0);
 }

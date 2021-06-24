@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 15:05:51 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/24 18:04:17 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/24 19:57:02 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 typedef struct s_stack
 {
 	long	*dat;
+	long	i;
 	long	siz;
 	long	max_siz;
 }			t_stack;

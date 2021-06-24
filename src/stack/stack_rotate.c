@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:38:47 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/24 18:57:32 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/24 22:10:32 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	stack_rev_rotate(t_stack *stack)
 
 	if (!stack)
 		return (error_put(1, "stack_rev_rotate : NULL stack"));
-	tmp = stack->dat[stack->siz - 1];
+	tmp = stack->dat[stack->i];
 	if (stack_pop_back(stack))
 		return (error_put(1, "stack_rev_rotate : stack_pop_back()"));
 	if (stack_push(stack, tmp))

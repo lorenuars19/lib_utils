@@ -4,7 +4,7 @@
 /*   stack_pop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                   stack->siz++;             +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:32:46 by lorenuar          #+#    #+#             */
 /*   Updated: 2021/06/21 21:49:17 by lorenuar         ###   ########.fr       */
 /*                                                                            */
@@ -25,6 +25,7 @@ int	stack_pop(t_stack *stack)
 
 int	stack_pop_back(t_stack *stack)
 {
-	stack->siz--;
+	stack->i--;
+	stack->siz = stack->i + 1;
 	return (0);
 }

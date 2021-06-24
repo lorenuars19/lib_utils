@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 13:03:14 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/24 18:26:20 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/24 22:11:24 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,11 @@ int	stack_new_resize(t_stack *stack)
 {
 	if (!stack)
 		return (error_put(1, "stack_new_resize : NULL stack"));
+	stack->siz = stack->i + 1;
 	if (stack->dat == NULL)
 	{
 		stack->max_siz = STACK_INIT_SIZ;
+		stack->i = 0;
 		stack->siz = 0;
 		stack->dat = malloc(sizeof(long) * stack->max_siz);
 		if (!stack->dat)

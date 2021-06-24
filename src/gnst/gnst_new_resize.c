@@ -47,10 +47,12 @@ int	gnst_new_resize(t_gnst *gnst)
 {
 	if (!gnst)
 		return (error_put(1, "gnst_new_resize : NULL gnst"));
+	gnst->siz = gnst->i + 1;
 	if (gnst->dat == NULL)
 	{
 		gnst->max_siz = GNST_INIT_SIZ;
-		gnst->siz = 0;
+		gnst->i = 0;
+		gnst->siz = gnst->i + 1;
 		gnst->dat = malloc(sizeof(long) * gnst->max_siz);
 		if (!gnst->dat)
 			return (error_put(1, "gnst_new_resize : gnst->data NULL"));

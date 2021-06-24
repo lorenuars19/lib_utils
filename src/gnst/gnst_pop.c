@@ -25,6 +25,6 @@ int	gnst_pop(t_gnst *gnst)
 
 int	gnst_pop_back(t_gnst *gnst)
 {
-	gnst->siz--;
+	gnst->i--;
 	return (0);
 }
