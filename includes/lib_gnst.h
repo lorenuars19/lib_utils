@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:09:49 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/24 21:29:06 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/24 22:57:47 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@
 typedef struct s_generic_stack
 {
 	void	**dat;
-	long	i;
 	long	siz;
 	long	max_siz;
 }			t_gnst;

@@ -35,7 +35,7 @@ int	gnst_push_back(t_gnst *gnst, void *data)
 		return (error_put(1, "gnst_push_back : gnst_new_resize() NULL data"));
 	if (!gnst->dat)
 		return (error_put(1, "gnst_push_back : gnst->dat NULL"));
-	gnst->dat[gnst->i] = data;
-	gnst->i++;
+	gnst->dat[gnst->siz] = data;
+	gnst->siz++;
 	return (0);
 }

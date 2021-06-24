@@ -19,11 +19,8 @@
 
 void	gnst_free(t_gnst *gnst)
 {
-	if (gnst && gnst->dat)
-	{
-		free(gnst->dat);
-		gnst->dat = NULL;
-		gnst->siz = 0;
-		gnst->max_siz = 0;
-	}
+	free(gnst->dat);
+	gnst->dat = NULL;
+	gnst->siz = 0;
+	gnst->max_siz = 0;
 }

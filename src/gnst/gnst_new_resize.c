@@ -17,27 +17,17 @@ int	sub_gnst_resize(t_gnst *gnst)
 {
 	long	i;
 	void	**copy;
-	long	siz;
 
-	if (!gnst)
-		return (error_put(1, "sub_gnst_resize : gnst NULL"));
-	siz = sizeof(long) * gnst->siz * GNST_SIZ_MULT;
-	if (siz <= 0)
-		return (error_put(1, "sub_gnst_resize : siz <= 0"));
-	copy = malloc(siz);
+	copy = malloc(sizeof(long) * gnst->siz * GNST_SIZ_MULT);
 	if (!copy)
 		return (error_put(1, "sub_gnst_resize : copy NULL"));
 	i = 0;
-	while (gnst && gnst->dat && i < gnst->siz)
+	while (i < gnst->siz)
 	{
 		copy[i] = gnst->dat[i];
 		i++;
 	}
-	if (gnst && gnst->dat)
-	{
-		free(gnst->dat);
-	}
-	gnst->dat = NULL;
+	free(gnst->dat);
 	gnst->dat = copy;
 	gnst->max_siz = gnst->max_siz * GNST_SIZ_MULT;
 	return (0);
@@ -47,12 +37,10 @@ int	gnst_new_resize(t_gnst *gnst)
 {
 	if (!gnst)
 		return (error_put(1, "gnst_new_resize : NULL gnst"));
-	gnst->siz = gnst->i + 1;
 	if (gnst->dat == NULL)
 	{
 		gnst->max_siz = GNST_INIT_SIZ;
-		gnst->i = 0;
-		gnst->siz = gnst->i + 1;
+		gnst->siz = 0;
 		gnst->dat = malloc(sizeof(long) * gnst->max_siz);
 		if (!gnst->dat)
 			return (error_put(1, "gnst_new_resize : gnst->data NULL"));

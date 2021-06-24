@@ -14,9 +14,5 @@
 
 size_t	gnst_get_size(t_gnst *gnst)
 {
-	if (gnst)
-	{
-		return (gnst->siz);
-	}
-	return (0);
+	return (gnst->siz);
 }
