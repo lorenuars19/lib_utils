@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:09:49 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/24 18:19:26 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/24 18:48:54 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,5 @@ size_t	gnst_get_size(t_gnst *gnst);
 int		gnst_swap(t_gnst *gnst);
 int		gnst_rotate(t_gnst *gnst);
 int		gnst_rev_rotate(t_gnst *gnst);
-
-# define E_SFA "gnst_from_args : gnst_push_back()"
-# define E_SFS "gnst_from_str : gnst_push_back()"
 
 #endif
