@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 14:08:25 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/24 15:59:17 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/24 16:52:10 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	stack_from_args(int argc, char *argv[], t_stack *a, int offs)
 			}
 			while (str && *str && is_wsp(*str))
 				str++;
-			if (str && *str && !(is_wsp(*str) || is_digit_sign(*str)))
+			if (str && *str && !is_digit_sign(*str))
 				return (error_put(1, "stack_from_args : INPUT non-numeric"));
 		}
 		i++;
@@ -66,7 +66,7 @@ int	stack_from_str(char *str, t_stack *a)
 		}
 		while (str && *str && (is_wsp(*str)))
 			str++;
-		if (str && *str && (!is_wsp(*str) || !is_digit_sign(*str)))
+		if (str && *str && !is_digit_sign(*str))
 			return (error_put(1, "stack_from_str : INPUT non-numeric"));
 	}
 	return (0);
