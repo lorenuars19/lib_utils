@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 13:03:14 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/24 18:16:14 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/21 20:54:11 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 size_t	stack_get_size(t_stack *stack)
 {
-	if (stack)
-	{
-		return (stack->siz);
-	}
-	return (0);
+	return (stack->siz);
 }

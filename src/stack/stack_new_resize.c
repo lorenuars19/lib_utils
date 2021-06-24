@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 13:03:14 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/24 22:11:24 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/21 23:37:57 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,17 @@ int	sub_stack_resize(t_stack *stack)
 {
 	long	i;
 	long	*copy;
-	long	siz;
 
-	if (!stack)
-		return (error_put(1, "sub_stack_resize : stack NULL"));
-	siz = sizeof(long) * stack->siz * STACK_SIZ_MULT;
-	if (siz <= 0)
-		return (error_put(1, "sub_stack_resize : siz <= 0"));
-	copy = malloc(siz);
+	copy = malloc(sizeof(long) * stack->siz * STACK_SIZ_MULT);
 	if (!copy)
 		return (error_put(1, "sub_stack_resize : copy NULL"));
 	i = 0;
-	while (stack && stack->dat && i < stack->siz)
+	while (i < stack->siz)
 	{
 		copy[i] = stack->dat[i];
 		i++;
 	}
-	if (stack && stack->dat)
-	{
-		free(stack->dat);
-	}
-	stack->dat = NULL;
+	free(stack->dat);
 	stack->dat = copy;
 	stack->max_siz = stack->max_siz * STACK_SIZ_MULT;
 	return (0);
@@ -47,11 +37,9 @@ int	stack_new_resize(t_stack *stack)
 {
 	if (!stack)
 		return (error_put(1, "stack_new_resize : NULL stack"));
-	stack->siz = stack->i + 1;
 	if (stack->dat == NULL)
 	{
 		stack->max_siz = STACK_INIT_SIZ;
-		stack->i = 0;
 		stack->siz = 0;
 		stack->dat = malloc(sizeof(long) * stack->max_siz);
 		if (!stack->dat)
