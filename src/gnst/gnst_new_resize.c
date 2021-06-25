@@ -39,7 +39,7 @@ int	gnst_new_resize(t_gnst *gnst)
 {
 	if (!gnst)
 		return (error_put(1, "gnst_new_resize : NULL gnst"));
-	if (gnst->dat == NULL || gnst->siz <= 0)
+	if (gnst->dat == NULL)
 	{
 		gnst->max_siz = GNST_INIT_SIZ;
 		gnst->siz = 0;

@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 13:03:14 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/25 11:51:51 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/25 15:32:46 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	stack_new_resize(t_stack *stack)
 {
 	if (!stack)
 		return (error_put(1, "stack_new_resize : NULL stack"));
-	if (stack->dat == NULL || stack->siz <= 0)
+	if (stack->dat == NULL)
 	{
 		stack->max_siz = STACK_INIT_SIZ;
 		stack->siz = 0;
