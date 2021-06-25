@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 13:03:14 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/21 23:37:57 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/06/25 11:51:51 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	sub_stack_resize(t_stack *stack)
 	long	i;
 	long	*copy;
 
+	if (stack->siz <= 0)
+		return (error_put(1, "sub_stack_resize :  (stack->siz <= 0)"));
 	copy = malloc(sizeof(long) * stack->siz * STACK_SIZ_MULT);
 	if (!copy)
 		return (error_put(1, "sub_stack_resize : copy NULL"));
@@ -37,7 +39,7 @@ int	stack_new_resize(t_stack *stack)
 {
 	if (!stack)
 		return (error_put(1, "stack_new_resize : NULL stack"));
-	if (stack->dat == NULL)
+	if (stack->dat == NULL || stack->siz <= 0)
 	{
 		stack->max_siz = STACK_INIT_SIZ;
 		stack->siz = 0;
