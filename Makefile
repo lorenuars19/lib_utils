@@ -65,6 +65,7 @@ SRCS = \
 	./src/list/lst_clear.c \
 	./src/list/lst_remove.c \
 	./src/str/str_skipto.c \
+	./src/str/str_split.c \
 	./src/str/str_cmp.c \
 	./src/str/str_eat_nbr.c \
 	./src/str/str_has.c \
@@ -113,17 +114,17 @@ SRCS = \
 	./src/gnst/gnst_swap.c \
 
 HEADERS = \
-	./includes/lib_list.h \
-	./includes/lib_ansi.h \
-	./includes/lib_nbr.h \
-	./includes/lib_gnst.h \
-	./includes/lib_math.h \
-	./includes/lib_io.h \
-	./includes/lib_chr.h \
-	./includes/lib_str.h \
-	./includes/ft_printf.h \
-	./includes/libutils.h \
-	./includes/lib_stack.h \
+	./includes/lib_list.h\
+	./includes/lib_ansi.h\
+	./includes/lib_nbr.h\
+	./includes/lib_gnst.h\
+	./includes/lib_math.h\
+	./includes/lib_io.h\
+	./includes/lib_chr.h\
+	./includes/lib_str.h\
+	./includes/ft_printf.h\
+	./includes/libutils.h\
+	./includes/lib_stack.h\
 
 ###▲▲▲<src-updater-do-not-edit-or-remove>▲▲▲
 
