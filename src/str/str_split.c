@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 18:22:05 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/08/03 18:31:08 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/08/04 17:59:10 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ static int	count_words(char const *s, char *set)
 	while (s && s[pos])
 	{
 		if (is_charset(s[pos], set))
+		{
 			count++;
+		}
 		pos++;
 	}
-	if (count < 1)
-		return (0);
-	return (count - 1);
+	return (count + 1);
 }
 
 static char	*tmp_str(const char *s, char *set)
@@ -59,14 +59,14 @@ static char	*tmp_str(const char *s, char *set)
 	return (tmp);
 }
 
-int	sub_str_split(char *s, char *set, char **split)
+int	sub_str_split(char *s, char *set, char **split, int words)
 {
 	int		i;
 	int		y;
 
 	i = 0;
 	y = 0;
-	while (s && s[i])
+	while (s && s[i] && y < words)
 	{
 		if (s && !is_charset(s[i], set))
 		{
@@ -91,13 +91,15 @@ int	sub_str_split(char *s, char *set, char **split)
 char	**str_split(char *s, char *set)
 {
 	char	**split;
+	int		words;
 
 	if (!s || !set)
 		return (NULL);
-	split = malloc(sizeof(char *) * (count_words(s, set) + 1));
+	words = count_words(s, set);
+	split = malloc(sizeof(char *) * (words + 1));
 	if (!split)
 		return (NULL);
-	if (sub_str_split(s, set, split))
+	if (sub_str_split(s, set, split, words))
 		return (NULL);
 	return (split);
 }
