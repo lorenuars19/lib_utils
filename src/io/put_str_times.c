@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 17:26:12 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/11 01:15:00 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/08/07 16:15:35 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ ssize_t	put_str_times_fd_nl(int fd, char *s, ssize_t n, size_t len)
 	}
 	if (write(fd, "\n", 1) == -1)
 	{
-		return (error_sys_put(errno));
+		return (error_sys_put("write"));
 	}
 	return (ret);
 }
