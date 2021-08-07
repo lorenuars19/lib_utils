@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 18:10:26 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/08/07 16:14:02 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/08/07 19:32:44 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,18 +60,11 @@ int	error_sys_put(char *msg)
 {
 	char		*s;
 
-	s = strerror(errno);
 	error_print();
 	put_str_fd(2, msg);
 	put_str_fd(2, " : ");
+	s = strerror(errno);
 	put_str_fd(2, s);
-	if (s)
-	{
-		if (write(2, s, str_len(s)) == -1)
-		{
-			return (errno);
-		}
-	}
 	put_str_fd(2, RST"\n");
 	return (errno);
 }
