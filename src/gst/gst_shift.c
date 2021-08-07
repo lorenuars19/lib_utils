@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnst_shift.c                                      :+:      :+:    :+:   */
+/*   gst_shift.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,39 +10,39 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_gnst.h"
+#include "lib_gst.h"
 
-int	gnst_shift_down(t_gnst *gnst)
+int	gst_shift_down(t_gst *gst)
 {
 	long	i;
 
-	if (!gnst)
-		return (error_put(1, "gnst_shift_down : NULL gnst"));
-	gnst->siz++;
-	if (gnst_new_resize(gnst))
-		return (error_put(1, "gnst_shift_down : gnst_new_resize() NULL data"));
-	i = gnst->siz - 1;
-	while (gnst->dat && i < gnst->siz && i >= 0)
+	if (!gst)
+		return (error_put(1, "gst_shift_down : NULL gst"));
+	gst->siz++;
+	if (gst_new_resize(gst))
+		return (error_put(1, "gst_shift_down : gst_new_resize() NULL data"));
+	i = gst->siz - 1;
+	while (gst->dat && i < gst->siz && i >= 0)
 	{
-		gnst->dat[i + 1] = gnst->dat[i];
+		gst->dat[i + 1] = gst->dat[i];
 		i--;
 	}
 	return (0);
 }
 
-int	gnst_shift_up(t_gnst *gnst)
+int	gst_shift_up(t_gst *gst)
 {
 	long	i;
 
-	if (!gnst)
-		return (error_put(1, "gnst_shift_up : NULL gnst"));
-	gnst->siz--;
-	if (gnst_new_resize(gnst))
-		return (error_put(1, "gnst_shift_up : gnst_new_resize() NULL data"));
+	if (!gst)
+		return (error_put(1, "gst_shift_up : NULL gst"));
+	gst->siz--;
+	if (gst_new_resize(gst))
+		return (error_put(1, "gst_shift_up : gst_new_resize() NULL data"));
 	i = 0;
-	while (gnst->dat && i < gnst->siz && i >= 0)
+	while (gst->dat && i < gst->siz && i >= 0)
 	{
-		gnst->dat[i] = gnst->dat[i + 1];
+		gst->dat[i] = gst->dat[i + 1];
 		i++;
 	}
 	return (0);

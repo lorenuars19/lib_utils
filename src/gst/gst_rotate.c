@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnst_rotate.c                                     :+:      :+:    :+:   */
+/*   gst_rotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,32 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_gnst.h"
+#include "lib_gst.h"
 
-int	gnst_rotate(t_gnst *gnst)
+int	gst_rotate(t_gst *gst)
 {
 	void	*tmp;
 
-	if (!gnst)
-		return (error_put(1, "gnst_rotate : NULL gnst"));
-	tmp = gnst->dat[0];
-	if (gnst_pop(gnst))
-		return (error_put(1, "gnst_rotate : gnst_pop()"));
-	if (gnst_push_back(gnst, tmp))
-		return (error_put(1, "gnst_rotate : gnst_push_back()"));
+	if (!gst)
+		return (error_put(1, "gst_rotate : NULL gst"));
+	tmp = gst->dat[0];
+	if (gst_pop(gst))
+		return (error_put(1, "gst_rotate : gst_pop()"));
+	if (gst_push_back(gst, tmp))
+		return (error_put(1, "gst_rotate : gst_push_back()"));
 	return (0);
 }
 
-int	gnst_rev_rotate(t_gnst *gnst)
+int	gst_rev_rotate(t_gst *gst)
 {
 	void	*tmp;
 
-	if (!gnst)
-		return (error_put(1, "gnst_rev_rotate : NULL gnst"));
-	tmp = gnst->dat[gnst->siz - 1];
-	if (gnst_pop_back(gnst))
-		return (error_put(1, "gnst_rev_rotate : gnst_pop_back()"));
-	if (gnst_push(gnst, tmp))
-		return (error_put(1, "gnst_rev_rotate : gnst_push()"));
+	if (!gst)
+		return (error_put(1, "gst_rev_rotate : NULL gst"));
+	tmp = gst->dat[gst->siz - 1];
+	if (gst_pop_back(gst))
+		return (error_put(1, "gst_rev_rotate : gst_pop_back()"));
+	if (gst_push(gst, tmp))
+		return (error_put(1, "gst_rev_rotate : gst_push()"));
 	return (0);
 }

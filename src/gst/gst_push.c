@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnst_push.c                                       :+:      :+:    :+:   */
+/*   gst_push.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,32 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_gnst.h"
+#include "lib_gst.h"
 
-int	gnst_push(t_gnst *gnst, void *data)
+int	gst_push(t_gst *gst, void *data)
 {
-	if (!gnst)
-		return (error_put(1, "gnst_push : NULL gnst"));
-	if (gnst_new_resize(gnst))
-		return (error_put(1, "gnst_push : gnst_new_resize() NULL data"));
-	if (gnst_shift_down(gnst))
+	if (!gst)
+		return (error_put(1, "gst_push : NULL gst"));
+	if (gst_new_resize(gst))
+		return (error_put(1, "gst_push : gst_new_resize() NULL data"));
+	if (gst_shift_down(gst))
 		return (1);
-	if (gnst && gnst->dat)
+	if (gst && gst->dat)
 	{
-		gnst->dat[0] = data;
+		gst->dat[0] = data;
 	}
 	return (0);
 }
 
-int	gnst_push_back(t_gnst *gnst, void *data)
+int	gst_push_back(t_gst *gst, void *data)
 {
-	if (!gnst)
-		return (error_put(1, "gnst_push_back : NULL gnst"));
-	if (gnst_new_resize(gnst))
-		return (error_put(1, "gnst_push_back : gnst_new_resize() NULL data"));
-	if (!gnst->dat)
-		return (error_put(1, "gnst_push_back : gnst->dat NULL"));
-	gnst->dat[gnst->siz] = data;
-	gnst->siz++;
+	if (!gst)
+		return (error_put(1, "gst_push_back : NULL gst"));
+	if (gst_new_resize(gst))
+		return (error_put(1, "gst_push_back : gst_new_resize() NULL data"));
+	if (!gst->dat)
+		return (error_put(1, "gst_push_back : gst->dat NULL"));
+	gst->dat[gst->siz] = data;
+	gst->siz++;
 	return (0);
 }

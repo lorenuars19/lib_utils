@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnst_free.c                                       :+:      :+:    :+:   */
+/*   gst_free.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,16 +11,16 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "lib_gnst.h"
+#include "lib_gst.h"
 
 /*
-** Free the whole gnst
+** Free the whole gst
 */
 
-void	gnst_free(t_gnst *gnst)
+void	gst_free(t_gst *gst)
 {
-	free(gnst->dat);
-	gnst->dat = NULL;
-	gnst->siz = 0;
-	gnst->max_siz = 0;
+	free(gst->dat);
+	gst->dat = NULL;
+	gst->siz = 0;
+	gst->max_siz = 0;
 }

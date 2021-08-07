@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnst_swap.c                                       :+:      :+:    :+:   */
+/*   gst_pop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 20:38:47 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/24 18:07:42 by lorenuar         ###   ########.fr       */
+/*   Created: 2021/03/09 20:32:46 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/06/24 18:07:37 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_gnst.h"
+#include "lib_gst.h"
 
-int	gnst_swap(t_gnst *gnst)
+/*
+** Pop the node on top of the gst
+*/
+
+int	gst_pop(t_gst *gst)
 {
-	void	*tmp;
+	if (gst_shift_up(*&gst))
+		return (error_put(1, "gst_pop : gst_shift_up()"));
+	return (0);
+}
 
-	if (!gnst)
-		return (error_put(1, "gnst_swap : NULL gnst"));
-	if (gnst->siz > 1)
-	{
-		tmp = gnst->dat[0];
-		gnst->dat[0] = gnst->dat[1];
-		gnst->dat[1] = tmp;
-	}
+int	gst_pop_back(t_gst *gst)
+{
+	gst->siz--;
 	return (0);
 }

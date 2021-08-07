@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnst_new_resize.c                                 :+:      :+:    :+:   */
+/*   gst_new_resize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,47 +11,47 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "lib_gnst.h"
+#include "lib_gst.h"
 
-int	sub_gnst_resize(t_gnst *gnst)
+int	sub_gst_resize(t_gst *gst)
 {
 	long	i;
 	void	**copy;
 
-	if (gnst->siz <= 0)
-		return (error_put(1, "sub_gnst_resize :  (gnst->siz <= 0)"));
-	copy = malloc(sizeof(void *) * gnst->siz * GNST_SIZ_MULT);
+	if (gst->siz <= 0)
+		return (error_put(1, "sub_gst_resize :  (gst->siz <= 0)"));
+	copy = malloc(sizeof(void *) * gst->siz * GST_SIZ_MULT);
 	if (!copy)
-		return (error_put(1, "sub_gnst_resize : copy NULL"));
+		return (error_put(1, "sub_gst_resize : copy NULL"));
 	i = 0;
-	while (i < gnst->siz)
+	while (i < gst->siz)
 	{
-		copy[i] = gnst->dat[i];
+		copy[i] = gst->dat[i];
 		i++;
 	}
-	free(gnst->dat);
-	gnst->dat = copy;
-	gnst->max_siz = gnst->max_siz * GNST_SIZ_MULT;
+	free(gst->dat);
+	gst->dat = copy;
+	gst->max_siz = gst->max_siz * GST_SIZ_MULT;
 	return (0);
 }
 
-int	gnst_new_resize(t_gnst *gnst)
+int	gst_new_resize(t_gst *gst)
 {
-	if (!gnst)
-		return (error_put(1, "gnst_new_resize : NULL gnst"));
-	if (gnst->dat == NULL)
+	if (!gst)
+		return (error_put(1, "gst_new_resize : NULL gst"));
+	if (gst->dat == NULL)
 	{
-		gnst->max_siz = GNST_INIT_SIZ;
-		gnst->siz = 0;
-		gnst->dat = malloc(sizeof(long) * gnst->max_siz);
-		if (!gnst->dat)
-			return (error_put(1, "gnst_new_resize : gnst->data NULL"));
+		gst->max_siz = GST_INIT_SIZ;
+		gst->siz = 0;
+		gst->dat = malloc(sizeof(long) * gst->max_siz);
+		if (!gst->dat)
+			return (error_put(1, "gst_new_resize : gst->data NULL"));
 	}
-	else if (gnst->siz >= gnst->max_siz)
+	else if (gst->siz >= gst->max_siz)
 	{
-		if (sub_gnst_resize(gnst))
+		if (sub_gst_resize(gst))
 		{
-			gnst_free(gnst);
+			gst_free(gst);
 			return (1);
 		}
 	}

@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnst_get_size.c                                   :+:      :+:    :+:   */
+/*   lib_mem.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 13:03:14 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/24 18:07:33 by lorenuar         ###   ########.fr       */
+/*   Created: 2021/03/06 15:05:51 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/08/07 17:04:50 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_gnst.h"
+#ifndef LIB_MEM_H
+# define LIB_MEM_H
 
-size_t	gnst_get_size(t_gnst *gnst)
-{
-	return (gnst->siz);
-}
+/*
+** mem
+*/
+
+#endif

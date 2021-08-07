@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libutils.h                                         :+:      :+:    :+:   */
+/*   gst_get_size.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/06 15:05:51 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/08/07 17:01:25 by lorenuar         ###   ########.fr       */
+/*   Created: 2021/03/09 13:03:14 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/06/24 18:07:33 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBUTILS_H
-# define LIBUTILS_H
+#include "lib_gst.h"
 
-# include "lib_chr.h"
-# include "lib_io.h"
-# include "lib_list.h"
-# include "lib_nbr.h"
-# include "lib_stack.h"
-# include "lib_gst.h"
-# include "lib_str.h"
-# include "lib_math.h"
-# include "ft_printf.h"
-
-#endif
+size_t	gst_get_size(t_gst *gst)
+{
+	return (gst->siz);
+}

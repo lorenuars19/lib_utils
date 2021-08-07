@@ -6,7 +6,7 @@
 #    By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/10 13:37:24 by lorenuar          #+#    #+#              #
-#    Updated: 2021/06/25 11:17:22 by lorenuar         ###   ########.fr        #
+#    Updated: 2021/08/07 17:01:25 by lorenuar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,14 @@ SRCS = \
 	./src/list/lst_iter.c \
 	./src/list/lst_clear.c \
 	./src/list/lst_remove.c \
+	./src/gst/gst_swap.c \
+	./src/gst/gst_get_size.c \
+	./src/gst/gst_new_resize.c \
+	./src/gst/gst_pop.c \
+	./src/gst/gst_push.c \
+	./src/gst/gst_shift.c \
+	./src/gst/gst_rotate.c \
+	./src/gst/gst_free.c \
 	./src/str/str_skipto.c \
 	./src/str/str_split.c \
 	./src/str/str_cmp.c \
@@ -104,22 +112,15 @@ SRCS = \
 	./src/chr/is_print.c \
 	./src/chr/is_alpha.c \
 	./src/chr/is_wsp.c \
-	./src/gnst/gnst_push.c \
-	./src/gnst/gnst_get_size.c \
-	./src/gnst/gnst_free.c \
-	./src/gnst/gnst_new_resize.c \
-	./src/gnst/gnst_rotate.c \
-	./src/gnst/gnst_shift.c \
-	./src/gnst/gnst_pop.c \
-	./src/gnst/gnst_swap.c \
 
 HEADERS = \
 	./includes/lib_list.h\
 	./includes/lib_ansi.h\
 	./includes/lib_nbr.h\
-	./includes/lib_gnst.h\
 	./includes/lib_math.h\
+	./includes/lib_gst.h\
 	./includes/lib_io.h\
+	./includes/lib_mem.h\
 	./includes/lib_chr.h\
 	./includes/lib_str.h\
 	./includes/ft_printf.h\
