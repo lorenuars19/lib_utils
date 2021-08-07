@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 18:22:05 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/08/04 17:59:10 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/08/07 23:27:54 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,4 +102,17 @@ char	**str_split(char *s, char *set)
 	if (sub_str_split(s, set, split, words))
 		return (NULL);
 	return (split);
+}
+
+void	str_split_free(char ***tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab && *tab && *tab[i])
+	{
+		free(*tab[i]);
+	}
+	free(*tab);
+	*tab = NULL;
 }
