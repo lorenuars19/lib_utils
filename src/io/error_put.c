@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 18:10:26 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/08/07 16:12:39 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/08/07 16:14:02 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	error_sys_put(char *msg)
 		}
 	}
 	put_str_fd(2, RST"\n");
-	return (err);
+	return (errno);
 }
 
 int	error_printf(int ret, char *fmt, ...)
