@@ -6,12 +6,12 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 18:22:05 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/08/07 23:34:09 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/08/07 23:37:48 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "lib_str.h"
+#include <stdlib.h>
 
 static int	lento_set(char const *s, char *set)
 {
