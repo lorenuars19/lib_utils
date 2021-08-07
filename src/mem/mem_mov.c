@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lib_mem.h                                          :+:      :+:    :+:   */
+/*   mem_mov.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/06 15:05:51 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/08/07 17:32:58 by lorenuar         ###   ########.fr       */
+/*   Created: 2020/01/13 11:05:34 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/08/07 17:32:49 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIB_MEM_H
-# define LIB_MEM_H
+#include "lib_mem.h"
 
-/*
-** mem
-*/
+void	*mem_mov(void *dst, const void *src, long size)
+{
+	long	i;
+	t_mem	*tmp_dst;
+	t_mem	*tmp_src;
 
-typedef unsigned char	t_mem;
-
-void	*mem_set(void *ptr, int dat, long len);
-
-void	*mem_cpy(void *dst, const void *src, long size);
-void	*mem_mov(void *dst, const void *src, long size);
-
-#endif
+	tmp_dst = (t_mem *)dst;
+	tmp_src = (t_mem *)src;
+	if (src < dst && tmp_dst && tmp_src)
+	{
+		i = size;
+		while (i--)
+			tmp_dst[i] = tmp_src[i];
+	}
+	else if (src > dst && tmp_dst && tmp_src)
+	{
+		i = 0;
+		while (i < size)
+			tmp_dst[i++] = *tmp_src++;
+	}
+	return (dst);
+}

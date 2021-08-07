@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lib_mem.h                                          :+:      :+:    :+:   */
+/*   mem_cpy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/06 15:05:51 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/08/07 17:32:58 by lorenuar         ###   ########.fr       */
+/*   Created: 2021/08/07 17:27:48 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/08/07 17:32:29 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIB_MEM_H
-# define LIB_MEM_H
+#include "lib_mem.h"
 
-/*
-** mem
-*/
+void	*mem_cpy(void *dst, const void *src, long size)
+{
+	long	i;
 
-typedef unsigned char	t_mem;
-
-void	*mem_set(void *ptr, int dat, long len);
-
-void	*mem_cpy(void *dst, const void *src, long size);
-void	*mem_mov(void *dst, const void *src, long size);
-
-#endif
+	i = 0;
+	if (dst == src)
+		return (dst);
+	while (dst && src && i < size)
+	{
+		(*(t_mem *)&dst[i]) = (*(t_mem *)&src[i]);
+		i++;
+	}
+	return (dst);
+}
