@@ -84,6 +84,7 @@ SRCS = \
 	./src/gst/gst_shift.c \
 	./src/gst/gst_rotate.c \
 	./src/gst/gst_free.c \
+	./src/str/str_split_free.c \
 	./src/str/str_skipto.c \
 	./src/str/str_split.c \
 	./src/str/str_cmp.c \
