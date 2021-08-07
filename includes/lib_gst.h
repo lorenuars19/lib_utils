@@ -22,7 +22,7 @@
 # define GST_INIT_SIZ 2
 # define GST_SIZ_MULT 2
 
-typedef struct s_generic_stack
+typedef struct s_generic_nst
 {
 	void	**dat;
 	long	siz;

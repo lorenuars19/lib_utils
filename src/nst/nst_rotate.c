@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_rotate.c                                     :+:      :+:    :+:   */
+/*   nst_rotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,32 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_stack.h"
+#include "lib_nst.h"
 
-int	stack_rotate(t_stack *stack)
+int	nst_rotate(t_nst *nst)
 {
 	long	tmp;
 
-	if (!stack)
-		return (error_put(1, "stack_swap : NULL stack"));
-	tmp = stack->dat[0];
-	if (stack_pop(stack))
-		return (error_put(1, "stack_rev_rotate : stack_pop()"));
-	if (stack_push_back(stack, tmp))
-		return (error_put(1, "stack_rev_rotate : stack_push_back()"));
+	if (!nst)
+		return (error_put(1, "nst_swap : NULL nst"));
+	tmp = nst->dat[0];
+	if (nst_pop(nst))
+		return (error_put(1, "nst_rev_rotate : nst_pop()"));
+	if (nst_push_back(nst, tmp))
+		return (error_put(1, "nst_rev_rotate : nst_push_back()"));
 	return (0);
 }
 
-int	stack_rev_rotate(t_stack *stack)
+int	nst_rev_rotate(t_nst *nst)
 {
 	long	tmp;
 
-	if (!stack)
-		return (error_put(1, "stack_swap : NULL stack"));
-	tmp = stack->dat[stack->siz - 1];
-	if (stack_pop_back(stack))
-		return (error_put(1, "stack_rotate : stack_pop_back()"));
-	if (stack_push(stack, tmp))
-		return (error_put(1, "stack_rotate : stack_push()"));
+	if (!nst)
+		return (error_put(1, "nst_swap : NULL nst"));
+	tmp = nst->dat[nst->siz - 1];
+	if (nst_pop_back(nst))
+		return (error_put(1, "nst_rotate : nst_pop_back()"));
+	if (nst_push(nst, tmp))
+		return (error_put(1, "nst_rotate : nst_push()"));
 	return (0);
 }

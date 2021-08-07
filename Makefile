@@ -6,7 +6,7 @@
 #    By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/10 13:37:24 by lorenuar          #+#    #+#              #
-#    Updated: 2021/08/07 17:01:25 by lorenuar         ###   ########.fr        #
+#    Updated: 2021/08/07 17:09:00 by lorenuar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,6 +81,15 @@ SRCS = \
 	./src/str/str_to_nbr.c \
 	./src/str/str_dupli.c \
 	./src/str/str_jointo.c \
+	./src/stk/stk_from.c \
+	./src/stk/stk_free.c \
+	./src/stk/stk_swap.c \
+	./src/stk/stk_new_resize.c \
+	./src/stk/stk_get_size.c \
+	./src/stk/stk_shift.c \
+	./src/stk/stk_pop.c \
+	./src/stk/stk_rotate.c \
+	./src/stk/stk_push.c \
 	./src/io/put_str_times.c \
 	./src/io/get_next_line.c \
 	./src/io/error_put.c \
@@ -93,15 +102,6 @@ SRCS = \
 	./src/ft_printf/call_dispatch.c \
 	./src/ft_printf/utils/extra.c \
 	./src/ft_printf/utils/num.c \
-	./src/stack/stack_free.c \
-	./src/stack/stack_rotate.c \
-	./src/stack/stack_get_size.c \
-	./src/stack/stack_pop.c \
-	./src/stack/stack_push.c \
-	./src/stack/stack_shift.c \
-	./src/stack/stack_new_resize.c \
-	./src/stack/stack_swap.c \
-	./src/stack/stack_from.c \
 	./src/math/min.c \
 	./src/math/abs.c \
 	./src/math/max.c \
@@ -122,10 +122,10 @@ HEADERS = \
 	./includes/lib_io.h\
 	./includes/lib_mem.h\
 	./includes/lib_chr.h\
+	./includes/lib_nst.h\
 	./includes/lib_str.h\
 	./includes/ft_printf.h\
 	./includes/libutils.h\
-	./includes/lib_stack.h\
 
 ###▲▲▲<src-updater-do-not-edit-or-remove>▲▲▲
 

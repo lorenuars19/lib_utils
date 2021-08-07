@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_get_size.c                                   :+:      :+:    :+:   */
+/*   nst_get_size.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_stack.h"
+#include "lib_nst.h"
 
-size_t	stack_get_size(t_stack *stack)
+size_t	nst_get_size(t_nst *nst)
 {
-	return (stack->siz);
+	return (nst->siz);
 }

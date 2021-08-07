@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_from.c                                       :+:      :+:    :+:   */
+/*   nst_from.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_stack.h"
+#include "lib_nst.h"
 #include "lib_chr.h"
 #include "lib_str.h"
 
 /*
-** Parse Args and strings to make a new stack
+** Parse Args and strings to make a new nst
 ** First element is on top
 */
 
-int	stack_from_args(int argc, char *argv[], t_stack *a, int offs)
+int	nst_from_args(int argc, char *argv[], t_nst *a, int offs)
 {
 	long	nbr;
 	char	*str;
@@ -34,13 +34,13 @@ int	stack_from_args(int argc, char *argv[], t_stack *a, int offs)
 			nbr = str_eat_nbr(&str);
 			if (str && (is_wsp(*str) || !*str))
 			{
-				if (stack_push_back(a, nbr))
+				if (nst_push_back(a, nbr))
 					return (error_put(1, E_SFA));
 			}
 			while (str && *str && is_wsp(*str))
 				str++;
 			if (str && *str && !is_digit_sign(*str))
-				return (error_put(1, "stack_from_args : INPUT non-numeric"));
+				return (error_put(1, "nst_from_args : INPUT non-numeric"));
 		}
 		i++;
 	}
@@ -48,11 +48,11 @@ int	stack_from_args(int argc, char *argv[], t_stack *a, int offs)
 }
 
 /*
-** Parse String to make a new stack
+** Parse String to make a new nst
 ** First element is on top
 */
 
-int	stack_from_str(char *str, t_stack *a)
+int	nst_from_str(char *str, t_nst *a)
 {
 	long	nbr;
 
@@ -61,13 +61,13 @@ int	stack_from_str(char *str, t_stack *a)
 		nbr = str_eat_nbr(&str);
 		if (str && (is_wsp(*str) || !*str))
 		{
-			if (stack_push_back(a, nbr))
+			if (nst_push_back(a, nbr))
 				return (error_put(1, E_SFS));
 		}
 		while (str && *str && (is_wsp(*str)))
 			str++;
 		if (str && *str && !is_digit_sign(*str))
-			return (error_put(1, "stack_from_str : INPUT non-numeric"));
+			return (error_put(1, "nst_from_str : INPUT non-numeric"));
 	}
 	return (0);
 }

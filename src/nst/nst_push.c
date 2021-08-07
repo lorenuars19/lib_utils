@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_push.c                                       :+:      :+:    :+:   */
+/*   nst_push.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,32 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_stack.h"
+#include "lib_nst.h"
 
-int	stack_push(t_stack *stack, long data)
+int	nst_push(t_nst *nst, long data)
 {
-	if (!stack)
-		return (error_put(1, "stack_push : NULL stack"));
-	if (stack_new_resize(stack))
-		return (error_put(1, "stack_push : stack_new_resize() NULL data"));
-	if (stack_shift_down(stack))
+	if (!nst)
+		return (error_put(1, "nst_push : NULL nst"));
+	if (nst_new_resize(nst))
+		return (error_put(1, "nst_push : nst_new_resize() NULL data"));
+	if (nst_shift_down(nst))
 		return (1);
-	if (stack && stack->dat)
+	if (nst && nst->dat)
 	{
-		stack->dat[0] = data;
+		nst->dat[0] = data;
 	}
 	return (0);
 }
 
-int	stack_push_back(t_stack *stack, long data)
+int	nst_push_back(t_nst *nst, long data)
 {
-	if (!stack)
-		return (error_put(1, "stack_shift : NULL stack"));
-	if (stack_new_resize(stack))
-		return (error_put(1, "stack_push_back : stack_new_resize() NULL data"));
-	if (!stack->dat)
-		return (error_put(1, "stack_push_back : stack->dat NULL"));
-	stack->dat[stack->siz] = data;
-	stack->siz++;
+	if (!nst)
+		return (error_put(1, "nst_shift : NULL nst"));
+	if (nst_new_resize(nst))
+		return (error_put(1, "nst_push_back : nst_new_resize() NULL data"));
+	if (!nst->dat)
+		return (error_put(1, "nst_push_back : nst->dat NULL"));
+	nst->dat[nst->siz] = data;
+	nst->siz++;
 	return (0);
 }

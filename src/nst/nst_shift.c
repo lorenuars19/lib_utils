@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_shift.c                                      :+:      :+:    :+:   */
+/*   nst_shift.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,39 +10,39 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_stack.h"
+#include "lib_nst.h"
 
-int	stack_shift_down(t_stack *stack)
+int	nst_shift_down(t_nst *nst)
 {
 	long	i;
 
-	if (!stack)
-		return (error_put(1, "stack_shift : NULL stack"));
-	stack->siz++;
-	if (stack_new_resize(stack))
-		return (error_put(1, "stack_shift : stack_new_resize() NULL data"));
-	i = stack->siz - 1;
-	while (stack->dat && i < stack->siz && i >= 0)
+	if (!nst)
+		return (error_put(1, "nst_shift : NULL nst"));
+	nst->siz++;
+	if (nst_new_resize(nst))
+		return (error_put(1, "nst_shift : nst_new_resize() NULL data"));
+	i = nst->siz - 1;
+	while (nst->dat && i < nst->siz && i >= 0)
 	{
-		stack->dat[i + 1] = stack->dat[i];
+		nst->dat[i + 1] = nst->dat[i];
 		i--;
 	}
 	return (0);
 }
 
-int	stack_shift_up(t_stack *stack)
+int	nst_shift_up(t_nst *nst)
 {
 	long	i;
 
-	if (!stack)
-		return (error_put(1, "stack_shift : NULL stack"));
-	stack->siz--;
-	if (stack_new_resize(stack))
-		return (error_put(1, "stack_shift : stack_new_resize() NULL data"));
+	if (!nst)
+		return (error_put(1, "nst_shift : NULL nst"));
+	nst->siz--;
+	if (nst_new_resize(nst))
+		return (error_put(1, "nst_shift : nst_new_resize() NULL data"));
 	i = 0;
-	while (stack->dat && i < stack->siz && i >= 0)
+	while (nst->dat && i < nst->siz && i >= 0)
 	{
-		stack->dat[i] = stack->dat[i + 1];
+		nst->dat[i] = nst->dat[i + 1];
 		i++;
 	}
 	return (0);

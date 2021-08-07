@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_free.c                                       :+:      :+:    :+:   */
+/*   nst_free.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,16 +11,16 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "lib_stack.h"
+#include "lib_nst.h"
 
 /*
-** Free the whole stack
+** Free the whole nst
 */
 
-void	stack_free(t_stack *stack)
+void	nst_free(t_nst *nst)
 {
-	free(stack->dat);
-	stack->dat = NULL;
-	stack->siz = 0;
-	stack->max_siz = 0;
+	free(nst->dat);
+	nst->dat = NULL;
+	nst->siz = 0;
+	nst->max_siz = 0;
 }

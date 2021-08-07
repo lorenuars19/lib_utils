@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_swap.c                                       :+:      :+:    :+:   */
+/*   nst_pop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 20:38:47 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/06/21 21:48:58 by lorenuar         ###   ########.fr       */
+/*   Created: 2021/03/09 20:32:46 by lorenuar          #+#    #+#             */
+/*   Updated: 2021/06/21 21:49:17 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_stack.h"
+#include "lib_nst.h"
 
-int	stack_swap(t_stack *stack)
+/*
+** Pop the node on top of the nst
+*/
+
+int	nst_pop(t_nst *nst)
 {
-	long	tmp;
+	if (nst_shift_up(*&nst))
+		return (error_put(1, "nst_pop : nst_shift_up()"));
+	return (0);
+}
 
-	if (!stack)
-		return (error_put(1, "stack_swap : NULL stack"));
-	if (stack->siz > 1)
-	{
-		tmp = stack->dat[0];
-		stack->dat[0] = stack->dat[1];
-		stack->dat[1] = tmp;
-	}
+int	nst_pop_back(t_nst *nst)
+{
+	nst->siz--;
 	return (0);
 }

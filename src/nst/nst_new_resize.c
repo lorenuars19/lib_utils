@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_new_resize.c                                 :+:      :+:    :+:   */
+/*   nst_new_resize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,47 +11,47 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "lib_stack.h"
+#include "lib_nst.h"
 
-int	sub_stack_resize(t_stack *stack)
+int	sub_nst_resize(t_nst *nst)
 {
 	long	i;
 	long	*copy;
 
-	if (stack->siz <= 0)
-		return (error_put(1, "sub_stack_resize :  (stack->siz <= 0)"));
-	copy = malloc(sizeof(long) * stack->siz * STACK_SIZ_MULT);
+	if (nst->siz <= 0)
+		return (error_put(1, "sub_nst_resize :  (nst->siz <= 0)"));
+	copy = malloc(sizeof(long) * nst->siz * NST_SIZ_MULT);
 	if (!copy)
-		return (error_put(1, "sub_stack_resize : copy NULL"));
+		return (error_put(1, "sub_nst_resize : copy NULL"));
 	i = 0;
-	while (i < stack->siz)
+	while (i < nst->siz)
 	{
-		copy[i] = stack->dat[i];
+		copy[i] = nst->dat[i];
 		i++;
 	}
-	free(stack->dat);
-	stack->dat = copy;
-	stack->max_siz = stack->max_siz * STACK_SIZ_MULT;
+	free(nst->dat);
+	nst->dat = copy;
+	nst->max_siz = nst->max_siz * NST_SIZ_MULT;
 	return (0);
 }
 
-int	stack_new_resize(t_stack *stack)
+int	nst_new_resize(t_nst *nst)
 {
-	if (!stack)
-		return (error_put(1, "stack_new_resize : NULL stack"));
-	if (stack->dat == NULL)
+	if (!nst)
+		return (error_put(1, "nst_new_resize : NULL nst"));
+	if (nst->dat == NULL)
 	{
-		stack->max_siz = STACK_INIT_SIZ;
-		stack->siz = 0;
-		stack->dat = malloc(sizeof(long) * stack->max_siz);
-		if (!stack->dat)
-			return (error_put(1, "stack_new_resize : stack->data NULL"));
+		nst->max_siz = NST_INIT_SIZ;
+		nst->siz = 0;
+		nst->dat = malloc(sizeof(long) * nst->max_siz);
+		if (!nst->dat)
+			return (error_put(1, "nst_new_resize : nst->data NULL"));
 	}
-	else if (stack->siz >= stack->max_siz)
+	else if (nst->siz >= nst->max_siz)
 	{
-		if (sub_stack_resize(stack))
+		if (sub_nst_resize(nst))
 		{
-			stack_free(stack);
+			nst_free(nst);
 			return (1);
 		}
 	}
