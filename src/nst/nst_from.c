@@ -13,6 +13,7 @@
 #include "lib_nst.h"
 #include "lib_chr.h"
 #include "lib_str.h"
+#include "lib_io.h"
 
 /*
 ** Parse Args and strings to make a new nst

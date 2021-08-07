@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 11:05:34 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/08/07 17:32:49 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/08/07 17:39:12 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*mem_mov(void *dst, const void *src, long size)
 
 	tmp_dst = (t_mem *)dst;
 	tmp_src = (t_mem *)src;
+	if (dst == src)
+		return (dst);
 	if (src < dst && tmp_dst && tmp_src)
 	{
 		i = size;

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "lib_nst.h"
+#include "lib_io.h"
 
 /*
 ** Pop the node on top of the nst

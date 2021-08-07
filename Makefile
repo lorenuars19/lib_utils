@@ -55,6 +55,18 @@ SRCS = \
 	./src/nbr/put_nbr_fd.c \
 	./src/nbr/put_nbr.c \
 	./src/nbr/nbr_len.c \
+	./src/nst/nst_get_size.c \
+	./src/nst/nst_free.c \
+	./src/nst/nst_pop.c \
+	./src/nst/nst_rotate.c \
+	./src/nst/nst_from.c \
+	./src/nst/nst_swap.c \
+	./src/nst/nst_new_resize.c \
+	./src/nst/nst_shift.c \
+	./src/nst/nst_push.c \
+	./src/mem/mem_set.c \
+	./src/mem/mem_cpy.c \
+	./src/mem/mem_mov.c \
 	./src/list/lst_map.c \
 	./src/list/lst_size.c \
 	./src/list/lst_last.c \
@@ -81,15 +93,6 @@ SRCS = \
 	./src/str/str_to_nbr.c \
 	./src/str/str_dupli.c \
 	./src/str/str_jointo.c \
-	./src/stk/stk_from.c \
-	./src/stk/stk_free.c \
-	./src/stk/stk_swap.c \
-	./src/stk/stk_new_resize.c \
-	./src/stk/stk_get_size.c \
-	./src/stk/stk_shift.c \
-	./src/stk/stk_pop.c \
-	./src/stk/stk_rotate.c \
-	./src/stk/stk_push.c \
 	./src/io/put_str_times.c \
 	./src/io/get_next_line.c \
 	./src/io/error_put.c \

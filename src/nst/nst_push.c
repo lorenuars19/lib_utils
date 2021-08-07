@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "lib_nst.h"
+#include "lib_io.h"
 
 int	nst_push(t_nst *nst, long data)
 {

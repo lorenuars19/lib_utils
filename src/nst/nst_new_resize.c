@@ -12,6 +12,7 @@
 
 #include <stdlib.h>
 #include "lib_nst.h"
+#include "lib_io.h"
 
 int	sub_nst_resize(t_nst *nst)
 {
