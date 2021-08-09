@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 10:09:39 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/22 23:10:20 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/08/09 19:10:01 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
+# include <stddef.h>
 # include "libutils.h"
 
 # define BASE_10 "0123456789"
@@ -32,13 +33,11 @@
 #  define PTR_DOT_NULL LINUX_PTR_NULL
 # endif
 
-typedef char	t_bool;
-
-enum			e_bool
+typedef enum e_bool
 {
-	false,
-	true
-};
+	FALSE,
+	TRUE
+}	t_bool;
 
 typedef struct s_base
 {

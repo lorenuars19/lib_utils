@@ -6,7 +6,7 @@
 /*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 09:52:05 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/05/22 23:09:19 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/08/09 19:09:27 by lorenuar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 void	sub_get_opts(va_list args, char **fmt, t_opt *opt)
 {
 	if (**fmt == '-')
-		opt->neg = true;
+		opt->neg = TRUE;
 	if (**fmt == '0')
-		opt->zr = true;
+		opt->zr = TRUE;
 	if (**fmt == '+')
-		opt->pls = true;
+		opt->pls = TRUE;
 	if (**fmt == '#')
-		opt->alt = true;
+		opt->alt = TRUE;
 	if (*(*fmt + 1) == '-')
-		opt->neg = true;
+		opt->neg = TRUE;
 	opt->fw = read_num(args, fmt);
 	if (**fmt == '.')
 	{
 		(*fmt)++;
-		opt->dot = true;
+		opt->dot = TRUE;
 		opt->pr = read_num(args, fmt);
 		opt->cv = **fmt;
 	}
@@ -49,7 +49,7 @@ ssize_t	get_opt(va_list args, char **fmt, int fd)
 	if (!skip_to(fmt, '%'))
 		return (ret);
 	if (**fmt == ' ')
-		opt.spa = true;
+		opt.spa = TRUE;
 	sub_get_opts(args, fmt, &opt);
 	if (opt.neg && opt.fw > 0)
 		opt.fw = -opt.fw;
@@ -57,10 +57,10 @@ ssize_t	get_opt(va_list args, char **fmt, int fd)
 	if (opt.fw >= 0)
 		opt.neg = 0;
 	if (opt.cv == 'x' || opt.cv == 'X' || opt.cv == 'p' || opt.cv == 'u')
-		opt.uns = true;
+		opt.uns = TRUE;
 	if (opt.pr < 0)
 	{
-		opt.dot = false;
+		opt.dot = FALSE;
 		opt.pr = 0;
 	}
 	ret += call_dispatch(args, opt);
